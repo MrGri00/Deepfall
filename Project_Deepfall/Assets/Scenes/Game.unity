@@ -137,6 +137,9 @@ GameObject:
   - component: {fileID: 292853221}
   - component: {fileID: 292853220}
   - component: {fileID: 292853225}
+  - component: {fileID: 292853226}
+  - component: {fileID: 292853227}
+  - component: {fileID: 292853228}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -303,7 +306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292853219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.061925173, y: 2.6971314, z: 0}
+  m_LocalPosition: {x: -0.061925173, y: 2.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -319,6 +322,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 150d8d72444beda40a2a3bd4c9e1ac04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &292853226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292853219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc617a4a13c681409280c9823699b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &292853227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292853219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa64887aa6c6fe45932926ede947523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &292853228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292853219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ecec63d90f4a84f8c2287644a3bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &365269169
@@ -1428,7 +1467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1037214984
 Transform:
   m_ObjectHideFlags: 0

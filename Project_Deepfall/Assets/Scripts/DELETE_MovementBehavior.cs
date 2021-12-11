@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class DELETEMovementBehavior: MonoBehaviour
+public class DELETE_MovementBehavior : MonoBehaviour
 {
     [SerializeField]
     private float _speed;
