@@ -21,6 +21,6 @@ public class MovementBehaviour : MonoBehaviour
             lastDir = dir;
         }
 
-        transform.position += new Vector3(dir, 0, 0) * speed * Time.fixedDeltaTime;
+        transform.position += new Vector3(dir, 0, 0) * speed * Time.deltaTime;
     }
 }

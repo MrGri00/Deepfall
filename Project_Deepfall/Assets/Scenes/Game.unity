@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa64887aa6c6fe45932926ede947523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 4
 --- !u!114 &292853228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: bdc775da3707be348b96652fc1ce760f, type: 2}
   remainState: {fileID: 0}
+  isMoving: 0
 --- !u!1 &365269169
 GameObject:
   m_ObjectHideFlags: 0
