@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-namespace FSM
+namespace StateMachine
 {
     [System.Serializable] //se necesita que se vea en el editor
     public class Transition

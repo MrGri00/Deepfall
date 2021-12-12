@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace FSM
+namespace StateMachine
 {
     public abstract class Action : ScriptableObject
     {
-        public abstract void Act(Controller controller);
+        public abstract void Act(PlayerController controller);
     }
 }

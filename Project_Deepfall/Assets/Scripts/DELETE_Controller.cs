@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace FSM
+namespace StateMachine
 {
     public class Controller : MonoBehaviour
     {
@@ -29,7 +29,7 @@ namespace FSM
         {
             if (!ActiveAI)                   // El parámetro permite que los 
                 return;                      // estados tengan una referencia al
-            currentState.UpdateState(this);  // controlador, para poder llamar a
+            //currentState.UpdateState(this);  // controlador, para poder llamar a
                                              // sus métodos
         }
 
