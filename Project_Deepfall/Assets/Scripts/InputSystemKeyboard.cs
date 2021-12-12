@@ -19,20 +19,5 @@ public class InputSystemKeyboard : MonoBehaviour
         {
             OnFire();
         }
-        /*
-        if(ver == -ver)
-        {
-            Propeller();
-        }*/
-        
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DoubleOnFire();
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            Propeller();
-        }*/
     }
 }

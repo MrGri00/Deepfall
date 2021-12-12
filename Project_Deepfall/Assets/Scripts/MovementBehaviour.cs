@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class MovementBehaviour : MonoBehaviour
 {
-    private InputSystemKeyboard _inputSystem = null;
+    public float speed;
 
-    private void Awake()
+    public void Move()
     {
-        _inputSystem = GetComponent<InputSystemKeyboard>();
+
+    }
+
+    public void Move(float dir)
+    {
+        transform.position += new Vector3(dir, 0, 0) * speed * Time.fixedDeltaTime;
     }
 }
