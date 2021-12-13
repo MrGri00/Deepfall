@@ -5,8 +5,17 @@ using UnityEngine;
 public class MovementBehaviour : MonoBehaviour
 {
     public float speed;
+    public float jumpForce;
+
+    private Rigidbody2D _rigidBody;
+    private LayerMask platformsLayer;
 
     private float lastDir = 1;
+
+    private void Awake()
+    {
+        _rigidBody = GetComponent<Rigidbody2D>();
+    }
 
     public void Move()
     {
@@ -22,5 +31,10 @@ public class MovementBehaviour : MonoBehaviour
         }
 
         transform.position += new Vector3(dir, 0, 0) * speed * Time.deltaTime;
+    }
+
+    public void Jump()
+    {
+        _rigidBody.velocity = Vector2.up * jumpForce;
     }
 }

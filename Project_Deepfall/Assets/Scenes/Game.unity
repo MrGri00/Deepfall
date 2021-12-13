@@ -532,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  jumpForce: 6
 --- !u!114 &292853228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,6 +586,10 @@ MonoBehaviour:
   currentState: {fileID: 11400000, guid: bdc775da3707be348b96652fc1ce760f, type: 2}
   remainState: {fileID: 0}
   isMoving: 0
+  isGrounded: 0
+  platformsLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &365269169
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +816,7 @@ GameObject:
   - component: {fileID: 886201587}
   - component: {fileID: 886201586}
   - component: {fileID: 886201589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Solid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,7 +1757,7 @@ GameObject:
   - component: {fileID: 1037214985}
   - component: {fileID: 1037214987}
   - component: {fileID: 1037214988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Destructible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2074,7 +2079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1705649112}
   - component: {fileID: 1705649111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,16 +8,18 @@ public class InputSystemKeyboard : MonoBehaviour
     public float hor { get; private set; }
     public float ver { get; private set; }
 
+    public event Action Jump = delegate { };
     public event Action OnFire = delegate { };
     
     void Update()
     {
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
-                
+
+        if (Input.GetKeyDown(KeyCode.W))
+            Jump();
+
         if (Input.GetButtonDown("Fire1"))
-        {
             OnFire();
-        }
     }
 }
