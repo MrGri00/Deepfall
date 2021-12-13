@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (_inputSystem.hor != 0)
+        if (_inputSystem.hor < -0.2 || _inputSystem.hor > 0.2)
         {
             isMoving = true;
             _movementBehaviour.Move(_inputSystem.hor);
