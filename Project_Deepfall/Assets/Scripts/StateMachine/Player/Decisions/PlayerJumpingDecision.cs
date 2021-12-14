@@ -8,7 +8,6 @@ public class PlayerJumpingDecision : StateMachine.Decision
 {
     public override bool Decide(PlayerController controller)
     {
-        bool t = controller.isMoving;
-        return t;
+        return !controller._playerSwitches.GetIsGrounded();
     }
 }

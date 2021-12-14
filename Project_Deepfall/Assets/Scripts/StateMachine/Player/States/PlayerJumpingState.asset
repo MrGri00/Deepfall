@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 853fe35e34354894ea34bbd0fa0a00a3, type: 3}
-  m_Name: PlayerRunningState
+  m_Name: PlayerJumpingState
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: 8ccf7a6639011044faae3329c2d6018e, type: 2}
+  transitions:
+  - decisions: []
+    trueState: {fileID: 0}
+    falseState: {fileID: 0}

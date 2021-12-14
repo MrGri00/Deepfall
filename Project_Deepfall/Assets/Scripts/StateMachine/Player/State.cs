@@ -25,13 +25,24 @@ namespace StateMachine
             }
         }
 
+        private bool AllDecisionsTrue(Transition currentTrans)
+        {
+            for (int i = 0; i < currentTrans.decisions.Length; i++)
+            {
+                if (currentTrans.decisions[i] == false)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void CheckTransitions(PlayerController controller)
         {
             for(int i = 0; i < transitions.Length; i++)
             {
-                bool decision = transitions[i].decision.Decide(controller);
-
-                if(decision)
+                if(AllDecisionsTrue(transitions[i]))
                 {
                     controller.Transition(transitions[i].trueState);
                     return;

@@ -8,7 +8,6 @@ public class MovementBehaviour : MonoBehaviour
     public float jumpForce;
 
     private Rigidbody2D _rigidBody;
-    private LayerMask platformsLayer;
 
     private float lastDir = 1;
 

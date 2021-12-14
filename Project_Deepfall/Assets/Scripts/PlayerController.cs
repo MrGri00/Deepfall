@@ -8,26 +8,20 @@ public class PlayerController : MonoBehaviour
     public StateMachine.State remainState;
 
     [HideInInspector]
-    public bool isMoving = false;
-    [HideInInspector]
-    public bool isGrounded = false;
+    public PlayerSwitches _playerSwitches;
 
     private Animator _animatorController;
     private InputSystemKeyboard _inputSystem;
     private MovementBehaviour _movementBehaviour;
-    private PolygonCollider2D _polygonCollider;
-
-    [SerializeField]
-    private LayerMask platformsLayer;
 
     public bool ActiveAI { get; set; }
 
     private void Awake()
     {
+        _playerSwitches = GetComponent<PlayerSwitches>();
         _animatorController = GetComponent<Animator>();
         _inputSystem = GetComponent<InputSystemKeyboard>();
         _movementBehaviour = GetComponent<MovementBehaviour>();
-        _polygonCollider = GetComponent<PolygonCollider2D>();
     }
 
     private void Start()
@@ -49,41 +43,23 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Move(_inputSystem.hor);
+        Move();
 
         if (!ActiveAI) return;
 
         currentState.UpdateState(this);
     }
 
-    void Move(float hor)
+    void Move()
     {
-        if (IsMoving(hor))
-            _movementBehaviour.Move(hor);
-    }
-
-    public bool IsMoving(float axis)
-    {
-        isMoving = (axis < -0.2 || axis > 0.2);
-        return isMoving;
+        if (_playerSwitches.GetIsMoving())
+            _movementBehaviour.Move(_inputSystem.hor);
     }
 
     void Jump()
     {
-        if (IsGrounded())
+        if (_playerSwitches.GetIsGrounded())
             _movementBehaviour.Jump();
-    }
-
-    private bool IsGrounded()
-    {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(_polygonCollider.bounds.center,
-            _polygonCollider.bounds.size, 0f,
-            Vector2.down, 0.1f,
-            platformsLayer);
-
-        Debug.Log(LayerMask.NameToLayer("Platforms"));
-
-        return raycastHit.collider != null;
     }
 
     void Shoot()
