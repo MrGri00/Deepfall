@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StateMachinePlayer;
+using StateMachine;
 
-[CreateAssetMenu(menuName = "StateMachinePlayer/Decisions/Falling")]
-public class PlayerFallingDecision : StateMachinePlayer.Decision
+[CreateAssetMenu(menuName = "StateMachine/Player/Decisions/Falling")]
+public class PlayerFallingDecision : StateMachine.Decision
 {
-    public override bool Decide(PlayerController controller)
+    public override bool Decide(FatherController controller)
     {
-        InputSystemKeyboard inputSystem = controller.gameObject.GetComponent<InputSystemKeyboard>();
+        PlayerController playerC = (PlayerController)controller;
 
-        return (!controller._playerSwitches.GetIsGrounded() && inputSystem.ver < -0.2f);
+        return playerC._playerSwitches.GetIsFalling();
     }
 }

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StateMachinePlayer;
+using StateMachine;
 
-[CreateAssetMenu(menuName = "StateMachinePlayer/Action/Jumping")]
-public class PlayerJumpingAction : StateMachinePlayer.Action
+[CreateAssetMenu(menuName = "StateMachine/Player/Action/Jumping")]
+public class PlayerJumpingAction : StateMachine.Action
 {
-    public override void Act(PlayerController controller)
+    public override void Act(FatherController controller)
     {
         controller.SetAnimation("isJumping", true);
         controller.SetAnimation("isFalling", false);

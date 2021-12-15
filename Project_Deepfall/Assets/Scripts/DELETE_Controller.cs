@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace StateMachinePlayer
+namespace StateMachine
 {
     public class DELETE_Controller : MonoBehaviour
     {

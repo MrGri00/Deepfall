@@ -585,7 +585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 02241ea4bd16aed42a93696b1bd6151a, type: 2}
-  remainState: {fileID: 0}
   _playerSwitches: {fileID: 0}
 --- !u!114 &292853232
 MonoBehaviour:
@@ -1775,7 +1774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1037214984
 Transform:
   m_ObjectHideFlags: 0

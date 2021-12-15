@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : FatherController
 {
     [HideInInspector]
     public PlayerSwitches _playerSwitches;
 
     private InputSystemKeyboard _inputSystem;
-
-    private Animator _animatorController;
-    private MovementBehaviour _movementBehaviour;
-
-    public StateMachinePlayer.State currentState;
 
     private void Awake()
     {
@@ -20,11 +15,6 @@ public class PlayerController : MonoBehaviour
         _animatorController = GetComponent<Animator>();
         _inputSystem = GetComponent<InputSystemKeyboard>();
         _movementBehaviour = GetComponent<MovementBehaviour>();
-    }
-
-    private void Start()
-    {
-        //ActiveAI = true;
     }
 
     private void OnEnable()
@@ -61,15 +51,5 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
 
-    }
-
-    public void SetAnimation(string variable, bool t)
-    {
-        _animatorController.SetBool(variable, t);
-    }
-
-    public void Transition(StateMachinePlayer.State nextState)
-    {
-        currentState = nextState;
     }
 }

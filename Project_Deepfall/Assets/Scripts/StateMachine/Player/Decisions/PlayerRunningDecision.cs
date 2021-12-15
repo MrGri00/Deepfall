@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StateMachinePlayer;
+using StateMachine;
 
-[CreateAssetMenu(menuName = "StateMachinePlayer/Decisions/Running")]
-public class PlayerRunningDecision : StateMachinePlayer.Decision
+[CreateAssetMenu(menuName = "StateMachine/Player/Decisions/Running")]
+public class PlayerRunningDecision : StateMachine.Decision
 {
-    public override bool Decide(PlayerController controller)
+    public override bool Decide(FatherController controller)
     {
-        return controller._playerSwitches.GetIsMoving();
+        PlayerController playerC = (PlayerController)controller;
+
+        return playerC._playerSwitches.GetIsMoving();
     }
 }

@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StateMachinePlayer;
+using StateMachine;
 
-[CreateAssetMenu(menuName = "StateMachinePlayer/Decisions/Grounded")]
-public class PlayerGroundedDecision : StateMachinePlayer.Decision
+[CreateAssetMenu(menuName = "StateMachine/Player/Decisions/Grounded")]
+public class PlayerGroundedDecision : StateMachine.Decision
 {
-    public override bool Decide(PlayerController controller)
+    public override bool Decide(FatherController controller)
     {
-        return (controller._playerSwitches.GetIsGrounded());
+        PlayerController playerC = (PlayerController)controller;
+
+        return (playerC._playerSwitches.GetIsGrounded());
     }
 }

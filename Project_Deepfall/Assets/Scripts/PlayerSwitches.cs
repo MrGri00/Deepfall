@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerSwitches : MonoBehaviour
 {
-   // private bool isMoving = false;
-    private bool isGrounded = false;
-
+    private Rigidbody2D _rigidBody;
     private InputSystemKeyboard _inputSystem;
 
     [SerializeField]
@@ -14,28 +12,32 @@ public class PlayerSwitches : MonoBehaviour
 
     private void Awake()
     {
+        _rigidBody = GetComponent<Rigidbody2D>();
         _inputSystem = GetComponent<InputSystemKeyboard>();
     }
 
     public bool GetIsMoving()
     {
-        return (_inputSystem.hor < -0.2 || _inputSystem.hor > 0.2);
+        return (_inputSystem.hor < -0.2f || _inputSystem.hor > 0.2f);
+    }
+
+    public bool GetIsJumping()
+    {
+        return (_inputSystem.ver > 0.05f);
+    }
+
+    public bool GetIsFalling()
+    {
+        return (_rigidBody.velocity.y < -0.05f);
     }
 
     public bool GetIsGrounded()
-    {
-        CheckIsGrounded();
-
-        return isGrounded;
-    }
-
-    public void CheckIsGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(GetComponent<PolygonCollider2D>().bounds.center,
             GetComponent<PolygonCollider2D>().bounds.size, 0f,
             Vector2.down, 0.1f,
             platformsLayer);
 
-        isGrounded = (raycastHit.collider != null);
+        return (raycastHit.collider != null);
     }
 }
