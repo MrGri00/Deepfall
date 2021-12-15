@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 853fe35e34354894ea34bbd0fa0a00a3, type: 3}
-  m_Name: PlayerRunningState
+  m_Name: P_STA_Running
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: f1ae08b10ff292c47a8d627eedaa33e0, type: 2}
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: 36cd401e16cc2994c912b8027b927481, type: 2}
+    trueState: {fileID: 0}
+    falseState: {fileID: 11400000, guid: 02241ea4bd16aed42a93696b1bd6151a, type: 2}

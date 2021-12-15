@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public StateMachine.State currentState;
-    public StateMachine.State remainState;
-
     [HideInInspector]
     public PlayerSwitches _playerSwitches;
 
-    private Animator _animatorController;
     private InputSystemKeyboard _inputSystem;
+
+    private Animator _animatorController;
     private MovementBehaviour _movementBehaviour;
 
-    public bool ActiveAI { get; set; }
+    public StateMachinePlayer.State currentState;
 
     private void Awake()
     {
@@ -26,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        ActiveAI = true;
+        //ActiveAI = true;
     }
 
     private void OnEnable()
@@ -44,8 +42,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
-
-        if (!ActiveAI) return;
 
         currentState.UpdateState(this);
     }
@@ -67,16 +63,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void Transition(StateMachine.State nextState)
+    public void SetAnimation(string variable, bool t)
     {
-        if (nextState != remainState)
-        {
-            currentState = nextState;
-        }
+        _animatorController.SetBool(variable, t);
     }
 
-    public void SetAnimation(string animation, bool value)
+    public void Transition(StateMachinePlayer.State nextState)
     {
-        _animatorController.SetBool(animation, value);
+        currentState = nextState;
     }
 }

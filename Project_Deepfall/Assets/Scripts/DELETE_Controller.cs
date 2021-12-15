@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace StateMachine
+namespace StateMachinePlayer
 {
-    public class Controller : MonoBehaviour
+    public class DELETE_Controller : MonoBehaviour
     {
         public State currentState; // apuntador al estado actual
         public State remainState;  // el estado en el que te quedas si no pasas a la siguiente

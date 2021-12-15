@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using StateMachinePlayer;
 
-[CreateAssetMenu(menuName = "StateMachinePlayer/Decisions/Jumping")]
-public class PlayerJumpingDecision : StateMachinePlayer.Decision
+[CreateAssetMenu(menuName = "StateMachinePlayer/Decisions/Falling")]
+public class PlayerFallingDecision : StateMachinePlayer.Decision
 {
     public override bool Decide(PlayerController controller)
     {
         InputSystemKeyboard inputSystem = controller.gameObject.GetComponent<InputSystemKeyboard>();
 
-        return (!controller._playerSwitches.GetIsGrounded() && inputSystem.ver > 0.2f);
+        return (!controller._playerSwitches.GetIsGrounded() && inputSystem.ver < -0.2f);
     }
 }

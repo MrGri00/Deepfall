@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StateMachine;
+using StateMachinePlayer;
 
-[CreateAssetMenu(menuName = "StateMachine/Player/Action/Idle")]
-public class PlayerIdleAction : StateMachine.Action
+[CreateAssetMenu(menuName = "StateMachinePlayer/Action/Idle")]
+public class PlayerIdleAction : StateMachinePlayer.Action
 {
     public override void Act(PlayerController controller)
     {

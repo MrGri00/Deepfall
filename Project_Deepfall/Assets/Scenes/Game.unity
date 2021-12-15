@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8233b7b4596fc6b4d84f31e98f7b9b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: bdc775da3707be348b96652fc1ce760f, type: 2}
+  currentState: {fileID: 11400000, guid: 02241ea4bd16aed42a93696b1bd6151a, type: 2}
   remainState: {fileID: 0}
   _playerSwitches: {fileID: 0}
 --- !u!114 &292853232

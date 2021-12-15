@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSwitches : MonoBehaviour
 {
-    private bool isMoving = false;
+   // private bool isMoving = false;
     private bool isGrounded = false;
 
     private InputSystemKeyboard _inputSystem;
@@ -19,19 +19,7 @@ public class PlayerSwitches : MonoBehaviour
 
     public bool GetIsMoving()
     {
-        CheckIsMoving(_inputSystem.hor);
-
-        return isMoving;
-    }
-
-    public void SetIsMoving(bool t)
-    {
-        isMoving = t;
-    }
-
-    public void CheckIsMoving(float hor)
-    {
-        SetIsMoving(hor < -0.2 || hor > 0.2);
+        return (_inputSystem.hor < -0.2 || _inputSystem.hor > 0.2);
     }
 
     public bool GetIsGrounded()
@@ -41,11 +29,6 @@ public class PlayerSwitches : MonoBehaviour
         return isGrounded;
     }
 
-    public void SetIsGrounded(bool t)
-    {
-        isGrounded = t;
-    }
-
     public void CheckIsGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(GetComponent<PolygonCollider2D>().bounds.center,
@@ -53,8 +36,6 @@ public class PlayerSwitches : MonoBehaviour
             Vector2.down, 0.1f,
             platformsLayer);
 
-        Debug.Log(LayerMask.NameToLayer("Platforms"));
-
-        SetIsGrounded(raycastHit.collider != null);
+        isGrounded = (raycastHit.collider != null);
     }
 }

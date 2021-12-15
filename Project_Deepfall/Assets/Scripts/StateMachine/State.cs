@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace StateMachine
+namespace StateMachinePlayer
 {
-    [CreateAssetMenu(menuName = "StateMachine/State")]
+    [CreateAssetMenu(menuName = "StateMachinePlayer/State")]
     public class State : ScriptableObject
     {
         public Action[] actions; // en un state se ejecutan varias acciones
@@ -25,24 +25,24 @@ namespace StateMachine
             }
         }
 
-        private bool AllDecisionsTrue(Transition currentTrans)
-        {
-            for (int i = 0; i < currentTrans.decisions.Length; i++)
-            {
-                if (currentTrans.decisions[i] == false)
-                {
-                    return false;
-                }
-            }
+        //private bool AllDecisionsTrue(Transition currentTrans)
+        //{
+        //    for (int i = 0; i < currentTrans.decisions.Length; i++)
+        //    {
+        //        if (currentTrans.decisions[i] == false)
+        //        {
+        //            return false;
+        //        }
+        //    }
 
-            return true;
-        }
+        //    return true;
+        //}
 
         private void CheckTransitions(PlayerController controller)
         {
             for(int i = 0; i < transitions.Length; i++)
             {
-                if(AllDecisionsTrue(transitions[i]))
+                if(transitions[i].decision.Decide(controller) == true)
                 {
                     controller.Transition(transitions[i].trueState);
                     return;

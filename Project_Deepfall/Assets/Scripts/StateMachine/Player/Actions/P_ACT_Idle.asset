@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8579aa548a2bd47a4f5abeacd5b89f, type: 3}
-  m_Name: PlayerJumpingDecision
+  m_Script: {fileID: 11500000, guid: 11a885a1552240a4c857c112463d0dc0, type: 3}
+  m_Name: P_ACT_Idle
   m_EditorClassIdentifier: 
