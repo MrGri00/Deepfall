@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public event Action<bool> Death = delegate { };
-    public event Action<int> LifeUpdated = delegate { };
+    public event Action Death = delegate { };
+    public event Action<int, int> LifeUpdated = delegate { };
 
     [SerializeField]
     private int maxHealth = 1;
@@ -17,16 +17,16 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         ResetHealth();
-        LifeUpdated(GetHealth());
+        LifeUpdated(GetHealth(), GetMaxHealth());
     }
 
     public void ReduceHealth(int dmg)
     {
         currentHealth -= dmg;
-        LifeUpdated(GetHealth());
+        LifeUpdated(GetHealth(), GetMaxHealth());
 
         if (currentHealth <= 0)
-            Death(false);
+            Death();
     }
 
     public void ResetHealth()
@@ -40,5 +40,23 @@ public class HealthManager : MonoBehaviour
             return 0;
         else
             return currentHealth;
+    }
+
+    public void AddHealth()
+    {
+        if (currentHealth < maxHealth)
+            currentHealth++;
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public void AddMaxHealth()
+    {
+        maxHealth++;
+        ResetHealth();
+        LifeUpdated(GetHealth(), GetMaxHealth());
     }
 }

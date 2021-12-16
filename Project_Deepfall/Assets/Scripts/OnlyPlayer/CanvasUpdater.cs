@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CanvasUpdater : MonoBehaviour
 {
-    public static event Action<int> UpdateCanvas = delegate { };
+    public static event Action<int, int> UpdateCanvas = delegate { };
 
     void OnEnable()
     {
@@ -17,8 +17,8 @@ public class CanvasUpdater : MonoBehaviour
         GetComponent<HealthManager>().LifeUpdated -= UpdateText;
     }
 
-    void UpdateText(int val)
+    void UpdateText(int health, int maxHealth)
     {
-        UpdateCanvas(val);
+        UpdateCanvas(health, maxHealth);
     }
 }

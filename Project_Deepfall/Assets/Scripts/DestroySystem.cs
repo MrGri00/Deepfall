@@ -14,9 +14,9 @@ public class DestroySystem : MonoBehaviour
         GetComponent<HealthManager>().Death -= Kill;
     }
 
-    void Kill(bool yesno)
+    void Kill()
     {
-        gameObject.SetActive(yesno);
+        gameObject.SetActive(false);
     }
 
     private void FixedUpdate()

@@ -23,8 +23,8 @@ public class HealthInfo : MonoBehaviour
         lifeText = GetComponent<Text>();
     }
 
-    private void UpdateText(int lifePoints)
+    private void UpdateText(int health, int maxHealth)
     {
-        lifeText.text = "Health: " + lifePoints;
+        lifeText.text = health + " / " + maxHealth;
     }
 }
