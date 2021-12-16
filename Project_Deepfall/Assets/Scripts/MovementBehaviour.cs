@@ -30,6 +30,9 @@ public class MovementBehaviour : MonoBehaviour
         }
 
         transform.position += new Vector3(dir, 0, 0) * speed * Time.deltaTime;
+        //_rigidBody.MovePosition((Vector2)transform.position + (new Vector2(dir, 0f) * speed));
+        //Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
+        //_rigidBody.MovePosition((Vector2)transform.position + (movement * speed * Time.deltaTime));
     }
 
     public void Jump()
