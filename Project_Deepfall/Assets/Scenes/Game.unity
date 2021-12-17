@@ -525,8 +525,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 5
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!60 &292853221
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -695,6 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc617a4a13c681409280c9823699b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {x: 0, y: 0}
 --- !u!114 &292853227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,8 +708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa64887aa6c6fe45932926ede947523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  jumpForce: 6
+  speed: 6
+  jumpForce: 20
 --- !u!114 &292853228
 MonoBehaviour:
   m_ObjectHideFlags: 0

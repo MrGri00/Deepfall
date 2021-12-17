@@ -31,15 +31,18 @@ public class PlayerController : FatherController
 
     private void Update()
     {
-        Move();
-
         currentState.UpdateState(this);
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     void Move()
     {
-        if (_playerSwitches.GetIsMoving())
-            _movementBehaviour.Move(_inputSystem.hor);
+        //if (_playerSwitches.GetIsMoving())
+            _movementBehaviour.Move(_inputSystem.movement);
     }
 
     void Jump()

@@ -39,7 +39,7 @@ public class EnemyController : FatherController
     void Move()
     {
         if (_playerSwitches.GetIsMoving())
-            _movementBehaviour.Move(_inputSystem.hor);
+            _movementBehaviour.Move(_inputSystem.movement);
     }
 
     void Jump()

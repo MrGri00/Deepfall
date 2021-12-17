@@ -5,16 +5,20 @@ using System;
 
 public class InputSystemKeyboard : MonoBehaviour
 {
-    public float hor { get; private set; }
-    public float ver { get; private set; }
+    //public float hor { get; private set; }
+    //public float ver { get; private set; }
+
+    public Vector2 movement;
 
     public event Action Jump = delegate { };
     public event Action OnFire = delegate { };
-    
+
     void Update()
     {
-        hor = Input.GetAxis("Horizontal");
-        ver = Input.GetAxis("Vertical");
+        //hor = Input.GetAxis("Horizontal");
+        //ver = Input.GetAxis("Vertical");
+
+        movement = new Vector2(Input.GetAxis("Horizontal"), 0);
 
         if (Input.GetKeyDown(KeyCode.W))
             Jump();
