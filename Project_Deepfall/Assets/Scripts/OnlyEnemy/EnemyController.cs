@@ -19,13 +19,13 @@ public class EnemyController : FatherController
 
     private void OnEnable()
     {
-        _inputSystem.Jump += Jump;
+        //_inputSystem.Jump += Jump;
         _inputSystem.OnFire += Shoot;
     }
 
     private void OnDisable()
     {
-        _inputSystem.Jump -= Jump;
+        //_inputSystem.Jump -= Jump;
         _inputSystem.OnFire -= Shoot;
     }
 

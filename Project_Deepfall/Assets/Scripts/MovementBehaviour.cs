@@ -42,7 +42,7 @@ public class MovementBehaviour : MonoBehaviour
 
     public void Jump()
     {
-        //_rigidBody.velocity = Vector2.up * jumpForce;
-        _rigidBody.AddForce(Vector2.up * jumpForce);
+        _rigidBody.velocity = Vector2.up * jumpForce;
+        //_rigidBody.AddForce(Vector2.up * jumpForce);
     }
 }

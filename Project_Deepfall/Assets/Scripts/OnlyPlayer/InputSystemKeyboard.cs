@@ -10,7 +10,7 @@ public class InputSystemKeyboard : MonoBehaviour
 
     public Vector2 movement;
 
-    public event Action Jump = delegate { };
+    //public event Action Jump = delegate { };
     public event Action OnFire = delegate { };
 
     void Update()
@@ -18,10 +18,10 @@ public class InputSystemKeyboard : MonoBehaviour
         //hor = Input.GetAxis("Horizontal");
         //ver = Input.GetAxis("Vertical");
 
-        movement = new Vector2(Input.GetAxis("Horizontal"), 0);
+        movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (Input.GetKeyDown(KeyCode.W))
-            Jump();
+        //if (Input.GetKeyDown(KeyCode.W))
+        //    Jump();
 
         if (Input.GetButtonDown("Fire1"))
             OnFire();

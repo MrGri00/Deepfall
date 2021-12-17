@@ -19,13 +19,13 @@ public class PlayerController : FatherController
 
     private void OnEnable()
     {
-        _inputSystem.Jump += Jump;
+        //_inputSystem.Jump += Jump;
         _inputSystem.OnFire += Shoot;
     }
 
     private void OnDisable()
     {
-        _inputSystem.Jump -= Jump;
+        //_inputSystem.Jump -= Jump;
         _inputSystem.OnFire -= Shoot;
     }
 
@@ -36,18 +36,19 @@ public class PlayerController : FatherController
 
     private void FixedUpdate()
     {
+        Jump();
         Move();
     }
 
     void Move()
     {
-        //if (_playerSwitches.GetIsMoving())
+        if (_playerSwitches.GetIsMoving())
             _movementBehaviour.Move(_inputSystem.movement);
     }
 
     void Jump()
     {
-        if (_playerSwitches.GetIsGrounded())
+        if (_playerSwitches.GetIsGrounded() && _playerSwitches.GetIsJumping())
             _movementBehaviour.Jump();
     }
 

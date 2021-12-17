@@ -24,8 +24,8 @@ public class PlayerSwitches : MonoBehaviour
 
     public bool GetIsJumping()
     {
-        //return (_inputSystem.ver > 0.05f);
-        return (_rigidBody.velocity.y > 0.2f);
+        return (_inputSystem.movement.y > 0.05f);
+        //return (_rigidBody.velocity.y > 0.2f);
     }
 
     public bool GetIsFalling()
