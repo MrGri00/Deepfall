@@ -29,20 +29,11 @@ public class MovementBehaviour : MonoBehaviour
             lastDir = dir.x;
         }
 
-        //transform.position += new Vector3(dir, 0, 0) * speed * Time.deltaTime;
-
-        //_rigidBody.MovePosition((Vector2)transform.position + (new Vector2(dir, 0f) * speed));
-        //Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
-        //_rigidBody.MovePosition((Vector2)transform.position + (movement * speed * Time.deltaTime));
-
-        dir = new Vector2(dir.x, _rigidBody.gravityScale * -1);
-
-        _rigidBody.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
+        _rigidBody.velocity = new Vector2(dir.x * speed, _rigidBody.velocity.y);
     }
 
     public void Jump()
     {
         _rigidBody.velocity = Vector2.up * jumpForce;
-        //_rigidBody.AddForce(Vector2.up * jumpForce);
     }
 }

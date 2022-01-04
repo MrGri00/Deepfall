@@ -24,13 +24,13 @@ public class PlayerSwitches : MonoBehaviour
 
     public bool GetIsJumping()
     {
-        return (_inputSystem.movement.y > 0.05f);
+        return (_inputSystem.movement.y > 0.02f);
         //return (_rigidBody.velocity.y > 0.2f);
     }
 
     public bool GetIsFalling()
     {
-        return (_rigidBody.velocity.y < 0.2f);
+        return (_rigidBody.velocity.y < -0.2f);
     }
 
     public bool GetIsGrounded()
