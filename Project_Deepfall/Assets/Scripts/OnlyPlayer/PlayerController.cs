@@ -8,6 +8,7 @@ public class PlayerController : FatherController
     public PlayerSwitches _playerSwitches;
 
     private InputSystemKeyboard _inputSystem;
+    private Weapons _currentWeapon;
 
     private void Awake()
     {
@@ -15,17 +16,16 @@ public class PlayerController : FatherController
         _animatorController = GetComponent<Animator>();
         _inputSystem = GetComponent<InputSystemKeyboard>();
         _movementBehaviour = GetComponent<MovementBehaviour>();
+        _currentWeapon = GetComponent<Weapons>();
     }
 
     private void OnEnable()
     {
-        //_inputSystem.Jump += Jump;
         _inputSystem.OnFire += Shoot;
     }
 
     private void OnDisable()
     {
-        //_inputSystem.Jump -= Jump;
         _inputSystem.OnFire -= Shoot;
     }
 
@@ -54,6 +54,6 @@ public class PlayerController : FatherController
 
     void Shoot()
     {
-
+        _currentWeapon.Shoot();
     }
 }

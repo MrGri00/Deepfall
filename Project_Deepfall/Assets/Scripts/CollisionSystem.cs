@@ -15,6 +15,6 @@ public class CollisionSystem : MonoBehaviour
 
     protected virtual void OnCollision(Collision2D other)
     {
-        other.gameObject.GetComponent<HealthManager>().ReduceHealth(dmg);
+        other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(dmg);
     }
 }

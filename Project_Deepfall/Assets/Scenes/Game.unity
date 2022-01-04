@@ -695,7 +695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc617a4a13c681409280c9823699b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {x: 0, y: 0}
 --- !u!114 &292853227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,7 +1013,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093b47900cbfd404185e49fc3c55b86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledLists: []
+  pooledLists:
+  - listName: Bullet
+    prefabToPool: {fileID: 4896863960806283738, guid: 98c110deafea07d48840a85e97d363bc, type: 3}
+    amount: 12
 --- !u!1 &886201584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,7 +2594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7635746299464882420, guid: 10da108ecac22d848babe07d72fce5fa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7635746299464882430, guid: 10da108ecac22d848babe07d72fce5fa, type: 3}
       propertyPath: m_IsTrigger
