@@ -19,13 +19,13 @@ public class EnemyController : FatherController
 
     private void OnEnable()
     {
-        _inputSystem.Jump += Jump;
+        //_inputSystem.Jump += Jump;
         _inputSystem.OnFire += Shoot;
     }
 
     private void OnDisable()
     {
-        _inputSystem.Jump -= Jump;
+        //_inputSystem.Jump -= Jump;
         _inputSystem.OnFire -= Shoot;
     }
 
@@ -39,7 +39,7 @@ public class EnemyController : FatherController
     void Move()
     {
         if (_playerSwitches.GetIsMoving())
-            _movementBehaviour.Move(_inputSystem.hor);
+            _movementBehaviour.Move(_inputSystem.movement);
     }
 
     void Jump()

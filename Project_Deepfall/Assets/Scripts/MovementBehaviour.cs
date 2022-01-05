@@ -21,18 +21,15 @@ public class MovementBehaviour : MonoBehaviour
 
     }
 
-    public void Move(float dir)
+    public void Move(Vector2 dir)
     {
-        if (dir * lastDir < 0)
+        if (dir.x * lastDir < 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            lastDir = dir;
+            lastDir = dir.x;
         }
 
-        transform.position += new Vector3(dir, 0, 0) * speed * Time.deltaTime;
-        //_rigidBody.MovePosition((Vector2)transform.position + (new Vector2(dir, 0f) * speed));
-        //Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);
-        //_rigidBody.MovePosition((Vector2)transform.position + (movement * speed * Time.deltaTime));
+        _rigidBody.velocity = new Vector2(dir.x * speed, _rigidBody.velocity.y);
     }
 
     public void Jump()
