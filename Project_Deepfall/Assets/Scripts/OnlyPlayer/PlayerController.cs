@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerController : FatherController
 {
+    public Transform shotPoint;
+
     [HideInInspector]
     public PlayerSwitches _playerSwitches;
 
+    [SerializeField]
+    private WeaponSystem _currentWeapon;
+
     private InputSystemKeyboard _inputSystem;
-    private Weapons _currentWeapon;
 
     private void Awake()
     {
@@ -16,7 +20,7 @@ public class PlayerController : FatherController
         _animatorController = GetComponent<Animator>();
         _inputSystem = GetComponent<InputSystemKeyboard>();
         _movementBehaviour = GetComponent<MovementBehaviour>();
-        _currentWeapon = GetComponent<Weapons>();
+        _currentWeapon = GetComponent<WeaponSystem>();
     }
 
     private void OnEnable()
