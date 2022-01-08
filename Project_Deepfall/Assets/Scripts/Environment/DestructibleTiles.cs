@@ -23,7 +23,9 @@ public class DestructibleTiles : CollisionSystem
                 impactPoint.x = hit.point.x - 0.01f * hit.normal.x;
                 impactPoint.y = hit.point.y - 0.01f * hit.normal.y;
 
-                destructibleTilemap.SetTile(destructibleTilemap.WorldToCell(impactPoint), null);
+                if(!isImmortal)
+                    destructibleTilemap.SetTile(destructibleTilemap.WorldToCell(impactPoint), null);
+                
                 other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(dmg);
             }
         }
