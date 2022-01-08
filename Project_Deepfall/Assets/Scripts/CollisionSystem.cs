@@ -6,7 +6,10 @@ using UnityEngine;
 public class CollisionSystem : MonoBehaviour
 {
     [SerializeField]
-    private int dmg = 1;
+    protected int dmg = 1;
+
+    [SerializeField]
+    protected bool isImmortal = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

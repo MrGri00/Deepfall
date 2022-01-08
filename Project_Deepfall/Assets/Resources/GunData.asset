@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570f1327fb3631241a3e1d64a1205782, type: 3}
   m_Name: GunData
   m_EditorClassIdentifier: 
-  fireForce: 1
+  fireForce: -200
   cadence: 1
   maxAmmo: 8
   recoil: 1
