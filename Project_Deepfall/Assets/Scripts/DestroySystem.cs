@@ -23,7 +23,9 @@ public class DestroySystem : MonoBehaviour
     {
         Vector3 pos = transform.position;
         Vector3 normPos = Camera.main.WorldToViewportPoint(pos);
-        if ((normPos.x < 0 || normPos.y > 1 || normPos.x > 1 || normPos.y < 0) && gameObject.tag != "PlayerTag")
+
+        // !! IMPORTANTE BORRAR COMPROBANTE TEMPORAL DE TAG PLAYER !!
+        if ((normPos.x < 0 || normPos.y > 1 || normPos.x > 1 || normPos.y < 0) && gameObject.tag != "Player")
         {
             gameObject.SetActive(false);
         }

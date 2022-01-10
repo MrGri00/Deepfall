@@ -10,9 +10,4 @@ public class GameManager : MonoBehaviour
     private EnemyManager _enemyManager;
     [SerializeField]
     private PowerupManager _powerupManager;
-
-    private void Start()
-    {
-        
-    }
 }

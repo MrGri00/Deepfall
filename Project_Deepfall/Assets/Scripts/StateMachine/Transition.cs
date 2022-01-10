@@ -5,11 +5,10 @@ using System;
 
 namespace StateMachine
 {
-    [System.Serializable] //se necesita que se vea en el editor
+    [Serializable] //se necesita que se vea en el editor
     public class Transition
     {
         public Decision[] decisions;
-        //public Decision decision;
         public State trueState;
         public State falseState;
     }

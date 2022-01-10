@@ -8,7 +8,7 @@ public abstract class WeaponSystem : MonoBehaviour
 
     public Transform shotPoint;
 
-    private int currentAmmo;
+    protected int currentAmmo;
 
     public abstract void Shoot();
 }
