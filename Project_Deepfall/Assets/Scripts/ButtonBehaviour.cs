@@ -6,14 +6,32 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehaviour : MonoBehaviour
 {
+    InputSystemKeyboard inputSystem = null;
+
+    private void Awake()
+    {
+        inputSystem = FindObjectOfType<InputSystemKeyboard>();
+    }
+
+    private void OnEnable()
+    {
+        inputSystem.PauseGame += OpenCanvas;
+    }
+
+    private void OnDisable()
+    {
+        inputSystem.PauseGame -= OpenCanvas;
+    }
 
     public void OpenCanvas()
     {
+        Time.timeScale = 0f;
         gameObject.SetActive(true);
     }
 
     public void CloseCanvas()
     {
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
