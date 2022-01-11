@@ -10,7 +10,8 @@ public class ButtonBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        inputSystem = FindObjectOfType<InputSystemKeyboard>();
+        if (FindObjectOfType<InputSystemKeyboard>())
+            inputSystem = FindObjectOfType<InputSystemKeyboard>();
     }
 
     private void OnEnable()
@@ -26,6 +27,7 @@ public class ButtonBehaviour : MonoBehaviour
     public void OpenCanvas()
     {
         Time.timeScale = 0f;
+        
         gameObject.SetActive(true);
     }
 
@@ -37,12 +39,18 @@ public class ButtonBehaviour : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        //SceneManager.LoadScene("Game");
+        SceneTransition.GoToScene("Game");
     }
 
     public void CloseGame()
     {
         Application.Quit();
+    }
+
+    public void FindCanvas()
+    {
+
     }
 }
 

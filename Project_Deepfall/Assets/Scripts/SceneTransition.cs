@@ -3,34 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneTransition : MonoBehaviour
+public static class SceneTransition
 {
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    public void NextScene()
+    public static void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void PreviousScene()
+    public static void PreviousScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-    public void ReloadScene()
+    public static void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
-    public void GoToScene(int sceneIndex)
+    public static void GoToScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void GoToScene(string sceneName)
+    public static void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
