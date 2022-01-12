@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    private Canvas canvasToToggle;
+    
     InputSystemKeyboard inputSystem = null;
 
     private void Awake()
@@ -26,31 +29,51 @@ public class ButtonBehaviour : MonoBehaviour
 
     public void OpenCanvas()
     {
-        Time.timeScale = 0f;
-        
-        gameObject.SetActive(true);
+        if (inputSystem != null)
+        {
+            inputSystem.isPaused = true;
+            Time.timeScale = 0f;
+        }
+        canvasToToggle.gameObject.SetActive(true);
     }
 
     public void CloseCanvas()
     {
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (inputSystem != null)
+        {
+            inputSystem.isPaused = false;
+            Time.timeScale = 1f;
+        }
+        canvasToToggle.gameObject.SetActive(false);
     }
 
     public void PlayGame()
     {
-        //SceneManager.LoadScene("Game");
+        if (inputSystem != null)
+        {
+            inputSystem.isPaused = false;
+            Time.timeScale = 1f;
+        }
         SceneTransition.GoToScene("Game");
+    }
+
+    public void MainMenu()
+    {
+        inputSystem.isPaused = false;
+        Time.timeScale = 1f;
+        SceneTransition.GoToScene(0);
+    }
+
+    public void ResetScene()
+    {
+        inputSystem.isPaused = false;
+        Time.timeScale = 1f;
+        SceneTransition.ReloadScene();
     }
 
     public void CloseGame()
     {
         Application.Quit();
-    }
-
-    public void FindCanvas()
-    {
-
     }
 }
 

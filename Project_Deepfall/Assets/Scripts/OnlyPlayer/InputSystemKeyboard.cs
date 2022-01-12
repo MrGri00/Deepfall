@@ -11,14 +11,19 @@ public class InputSystemKeyboard : MonoBehaviour
     public event Action PauseGame = delegate { };
     public event Action OnFire = delegate { };
 
+    public bool isPaused = false;
+
     void Update()
     {
-        movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (!isPaused)
+        {
+            movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            PauseGame();
+            if (Input.GetKeyDown(KeyCode.Escape))
+                PauseGame();
 
-        if (Input.GetButtonDown("Fire1"))
-            OnFire();
+            if (Input.GetButtonDown("Fire1"))
+                OnFire();
+        }
     }
 }
