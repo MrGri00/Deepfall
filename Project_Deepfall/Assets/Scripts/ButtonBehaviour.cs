@@ -73,6 +73,9 @@ public class ButtonBehaviour : MonoBehaviour
 
     public void CloseGame()
     {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
         Application.Quit();
     }
 }
