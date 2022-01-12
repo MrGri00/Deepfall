@@ -58,6 +58,7 @@ public class PlayerController : FatherController
 
     void Shoot()
     {
-        _currentWeapon.Shoot();
+        if (!_playerSwitches.GetIsGrounded())
+            _currentWeapon.Shoot();
     }
 }
