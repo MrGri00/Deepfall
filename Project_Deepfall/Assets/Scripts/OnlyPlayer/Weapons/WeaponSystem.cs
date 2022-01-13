@@ -9,6 +9,13 @@ public abstract class WeaponSystem : MonoBehaviour
     public Transform shotPoint;
 
     protected int currentAmmo;
+    protected bool canShoot = true;
+
+    protected Rigidbody2D _rigidBody;
 
     public abstract void Shoot();
+
+    public abstract void InitializeWeapon();
+
+    public abstract IEnumerator CadenceCountdown();
 }
