@@ -10,9 +10,15 @@ public class Gun : WeaponSystem
     // REMEMBER TO DELETE
     private void Start()
     {
-        InitializeWeapon();
+        Reload();
     }
     // REMEMBER TO DELETE
+
+    private void Update()
+    {
+        if (GetComponent<PlayerSwitches>().GetIsGrounded())
+            Reload();
+    }
 
 
     public override void Shoot()
@@ -23,6 +29,8 @@ public class Gun : WeaponSystem
 
         if (projectile != null && canShoot && currentAmmo > 0)
         {
+            currentAmmo--;
+            UpdateAmmo(currentAmmo, weaponData.maxAmmo);
             projectile.GetComponent<HealthManager>().ResetHealth();
             projectile.transform.position = shotPoint.position;
             projectile.transform.rotation = shotPoint.rotation;
@@ -41,7 +49,12 @@ public class Gun : WeaponSystem
         canShoot = true;
     }
 
-    public override void InitializeWeapon()
+    //public override void InitializeWeapon()
+    //{
+    //    Reload();
+    //}
+
+    public override void Reload()
     {
         currentAmmo = weaponData.maxAmmo;
         UpdateAmmo(currentAmmo, weaponData.maxAmmo);

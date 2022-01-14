@@ -18,7 +18,9 @@ public abstract class WeaponSystem : MonoBehaviour
 
     public abstract void Shoot();
 
-    public abstract void InitializeWeapon();
+    //public abstract void InitializeWeapon();
+
+    public abstract void Reload();
 
     public abstract IEnumerator CadenceCountdown();
 }
