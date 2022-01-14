@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class WeaponSystem : MonoBehaviour
 {
+    public abstract event Action<int, int> UpdateAmmo;
+
     public WeaponSystemData weaponData;
 
     public Transform shotPoint;

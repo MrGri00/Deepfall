@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : WeaponSystem
 {
+    public override event Action<int, int> UpdateAmmo = delegate { };
+
     // REMEMBER TO DELETE
     private void Start()
     {
@@ -41,5 +44,6 @@ public class Gun : WeaponSystem
     public override void InitializeWeapon()
     {
         currentAmmo = weaponData.maxAmmo;
+        UpdateAmmo(currentAmmo, weaponData.maxAmmo);
     }
 }

@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthInfo : MonoBehaviour
+public class CanvasInfoHealth : MonoBehaviour
 {
-    private Text lifeText;
+    private Text text;
 
     void OnEnable()
     {
-        CanvasUpdater.UpdateCanvas += UpdateText;
+        CanvasUpdater.UpdateCanvasLife += UpdateText;
     }
 
     void OnDisable()
     {
-        CanvasUpdater.UpdateCanvas -= UpdateText;
+        CanvasUpdater.UpdateCanvasLife -= UpdateText;
     }
 
     private void Awake()
     {
-        lifeText = GetComponent<Text>();
+        text = GetComponent<Text>();
     }
 
     private void UpdateText(int health, int maxHealth)
     {
-        lifeText.text = health + " / " + maxHealth;
+        text.text = health + " / " + maxHealth;
     }
 }
