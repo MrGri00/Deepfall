@@ -19,12 +19,14 @@ public class ButtonBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-        inputSystem.PauseGame += OpenCanvas;
+        if (inputSystem != null)
+            inputSystem.PauseGame += OpenCanvas;
     }
 
     private void OnDisable()
     {
-        inputSystem.PauseGame -= OpenCanvas;
+        if (inputSystem != null)
+            inputSystem.PauseGame -= OpenCanvas;
     }
 
     public void OpenCanvas()
@@ -55,13 +57,17 @@ public class ButtonBehaviour : MonoBehaviour
             Time.timeScale = 1f;
         }
         SceneTransition.GoToScene("Game");
+        //SceneTransition.NextScene();
     }
 
     public void MainMenu()
     {
-        inputSystem.isPaused = false;
-        Time.timeScale = 1f;
-        SceneTransition.GoToScene(0);
+        if (inputSystem != null)
+        {
+            inputSystem.isPaused = false;
+            Time.timeScale = 1f;
+        }
+        SceneTransition.GoToScene(1);
     }
 
     public void ResetScene()

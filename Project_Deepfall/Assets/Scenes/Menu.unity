@@ -2996,7 +2996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: DEEPFALL
+  m_Text: MAIN MENU
 --- !u!222 &2069115357
 CanvasRenderer:
   m_ObjectHideFlags: 0
