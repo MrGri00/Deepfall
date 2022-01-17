@@ -16,4 +16,4 @@ MonoBehaviour:
   cadence: 0.6
   maxAmmo: 6
   recoil: 250
-  bulletLifetime: 0.3
+  bulletLifetime: 0.15

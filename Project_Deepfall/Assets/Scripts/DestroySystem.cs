@@ -18,16 +18,4 @@ public class DestroySystem : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
-    private void FixedUpdate()
-    {
-        Vector3 pos = transform.position;
-        Vector3 normPos = Camera.main.WorldToViewportPoint(pos);
-
-        // !! IMPORTANTE BORRAR COMPROBANTE TEMPORAL DE TAG PLAYER !!
-        if ((normPos.x < 0 || normPos.y > 1 || normPos.x > 1 || normPos.y < 0) && gameObject.tag != "Player")
-        {
-            gameObject.SetActive(false);
-        }
-    }
 }

@@ -7,13 +7,6 @@ public class Gun : WeaponSystem
 {
     public override event Action<int, int> UpdateAmmo = delegate { };
 
-    // REMEMBER TO DELETE
-    private void Start()
-    {
-        Reload();
-    }
-    // REMEMBER TO DELETE
-
     private void Update()
     {
         if (GetComponent<PlayerSwitches>().GetIsGrounded())
@@ -47,11 +40,6 @@ public class Gun : WeaponSystem
         yield return new WaitForSeconds(weaponData.cadence);
         canShoot = true;
     }
-
-    //public override void InitializeWeapon()
-    //{
-    //    Reload();
-    //}
 
     public override void Reload()
     {

@@ -11,6 +11,7 @@ public class InputSystemKeyboard : MonoBehaviour
     public event Action PauseGame = delegate { };
     public event Action OnFire = delegate { };
 
+    [HideInInspector]
     public bool isPaused = false;
 
     void Update()

@@ -7,6 +7,9 @@ public class DestructibleTiles : CollisionSystem
 {
     private Tilemap destructibleTilemap;
 
+    [SerializeField]
+    private bool isImmortal = false;
+
     private void Start()
     {
         destructibleTilemap = GetComponent<Tilemap>();

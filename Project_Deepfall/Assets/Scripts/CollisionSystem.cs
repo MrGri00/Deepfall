@@ -8,9 +8,6 @@ public class CollisionSystem : MonoBehaviour
     [SerializeField]
     protected int dmg = 1;
 
-    [SerializeField]
-    protected bool isImmortal = false;
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         OnCollision(collision);

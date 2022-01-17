@@ -14,6 +14,9 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private int currentHealth;
 
+    [SerializeField]
+    private bool isImmortal = false;
+
     private void Start()
     {
         ResetHealth();
@@ -22,8 +25,11 @@ public class HealthManager : MonoBehaviour
 
     public void ReduceHealth(int dmg)
     {
-        currentHealth -= dmg;
-        LifeUpdated(GetHealth(), GetMaxHealth());
+        if (!isImmortal)
+        {
+            currentHealth -= dmg;
+            LifeUpdated(GetHealth(), GetMaxHealth());
+        }
 
         if (currentHealth <= 0)
             Death();
@@ -46,6 +52,8 @@ public class HealthManager : MonoBehaviour
     {
         if (currentHealth < maxHealth)
             currentHealth++;
+
+        LifeUpdated(GetHealth(), GetMaxHealth());
     }
 
     public int GetMaxHealth()

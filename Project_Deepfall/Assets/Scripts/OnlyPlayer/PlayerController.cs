@@ -21,6 +21,8 @@ public class PlayerController : FatherController
         _inputSystem = GetComponent<InputSystemKeyboard>();
         _movementBehaviour = GetComponent<MovementBehaviour>();
         _currentWeapon = GetComponent<WeaponSystem>();
+
+        _currentWeapon.Reload();
     }
 
     private void OnEnable()
