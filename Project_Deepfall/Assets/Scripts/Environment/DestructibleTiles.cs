@@ -20,15 +20,15 @@ public class DestructibleTiles : CollisionSystem
         if (other.gameObject.CompareTag("Projectile"))
         {
             Vector3 impactPoint = Vector3.zero;
-            
-            foreach(ContactPoint2D hit in other.contacts)
+
+            foreach (ContactPoint2D hit in other.contacts)
             {
                 impactPoint.x = hit.point.x - 0.01f * hit.normal.x;
                 impactPoint.y = hit.point.y - 0.01f * hit.normal.y;
 
-                if(!isImmortal)
+                if (!isImmortal)
                     destructibleTilemap.SetTile(destructibleTilemap.WorldToCell(impactPoint), null);
-                
+
                 other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(dmg);
             }
         }

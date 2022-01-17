@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7399508730614569182}
   - component: {fileID: 2626458369559391284}
   - component: {fileID: 4475051472104208884}
+  - component: {fileID: 7481744381917553154}
   m_Layer: 7
   m_Name: Slug
   m_TagString: Projectile
@@ -150,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 1
+  isImmortal: 0
 --- !u!114 &7399508730614569182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
-  isImmortal: 0
 --- !u!114 &2626458369559391284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +190,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 324641519b013074089b172b8bc6d2c3, type: 2}
+--- !u!114 &7481744381917553154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6603921659574862780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13749682ea4c8794a8f8482a2bea88ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFromCameraX: 1
+  distanceFromCameraY: 1
