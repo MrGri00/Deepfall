@@ -673,10 +673,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 292853219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71cf68750603a6445b6fd344a305f1f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9999313d86c646d4bb81a65c41e89b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 324641519b013074089b172b8bc6d2c3, type: 2}
+  weaponData: {fileID: 11400000, guid: 2c0eba42f5574c04689a4b360081c4e7, type: 2}
   shotPoint: {fileID: 1640693367}
 --- !u!95 &292853222
 Animator:
@@ -1211,10 +1211,13 @@ MonoBehaviour:
   pooledLists:
   - listName: Bullet
     prefabToPool: {fileID: 4896863960806283738, guid: 98c110deafea07d48840a85e97d363bc, type: 3}
-    amount: 12
+    amount: 24
   - listName: Slug
     prefabToPool: {fileID: 6603921659574862780, guid: 73003c6e1b6ab8c41aec42c7fa1ce928, type: 3}
-    amount: 30
+    amount: 60
+  - listName: Ray
+    prefabToPool: {fileID: 8995059142480517204, guid: 0b4483fb3cc82e944b8c615bc92d522e, type: 3}
+    amount: 9
 --- !u!1 &886201584
 GameObject:
   m_ObjectHideFlags: 0
