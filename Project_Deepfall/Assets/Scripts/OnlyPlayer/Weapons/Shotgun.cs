@@ -7,12 +7,6 @@ public class Shotgun : WeaponSystem
 {
     public override event Action<int, int> UpdateAmmo = delegate { };
 
-    private void Update()
-    {
-        if (GetComponent<PlayerSwitches>().GetIsGrounded())
-            Reload();
-    }
-
     public override void Shoot()
     {
         GameObject[] projectile = new GameObject[weaponData.maxAmmo * 5];

@@ -29,4 +29,10 @@ public class CanvasUpdater : MonoBehaviour
     {
         UpdateCanvasAmmo(currentAmmo, maxAmmo);
     }
+
+    public void ReSub()
+    {
+        OnDisable();
+        OnEnable();
+    }
 }

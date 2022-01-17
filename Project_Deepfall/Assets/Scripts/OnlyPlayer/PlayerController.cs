@@ -44,6 +44,9 @@ public class PlayerController : FatherController
     {
         Jump();
         Move();
+
+        if (_playerSwitches.GetIsGrounded())
+            _currentWeapon.Reload();
     }
 
     void Move()
@@ -62,5 +65,10 @@ public class PlayerController : FatherController
     {
         if (!_playerSwitches.GetIsGrounded())
             _currentWeapon.Shoot();
+    }
+
+    public void SetWeapon(WeaponSystem newWeapon)
+    {
+        _currentWeapon = newWeapon;
     }
 }
