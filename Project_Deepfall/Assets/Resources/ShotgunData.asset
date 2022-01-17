@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 570f1327fb3631241a3e1d64a1205782, type: 3}
-  m_Name: GunData
+  m_Name: ShotgunData
   m_EditorClassIdentifier: 
-  fireForce: -500
-  cadence: 0.4
-  maxAmmo: 12
-  recoil: 150
-  bulletLifetime: 1
+  fireForce: -600
+  cadence: 0.6
+  maxAmmo: 6
+  recoil: 250
+  bulletLifetime: 0.3

@@ -20,7 +20,6 @@ public class Gun : WeaponSystem
             Reload();
     }
 
-
     public override void Shoot()
     {
         GameObject projectile = PoolingManager.Instance.GetPooledObject("Bullet");
