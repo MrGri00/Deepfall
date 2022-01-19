@@ -48,10 +48,12 @@ public class HealthManager : MonoBehaviour
             return currentHealth;
     }
 
-    public void AddHealth()
+    public void AddHealth(int addHealth)
     {
-        if (currentHealth < maxHealth)
-            currentHealth++;
+        if ((currentHealth + addHealth) <= maxHealth)
+            currentHealth += addHealth;
+        else
+            ResetHealth();
 
         LifeUpdated(GetHealth(), GetMaxHealth());
     }
@@ -61,9 +63,9 @@ public class HealthManager : MonoBehaviour
         return maxHealth;
     }
 
-    public void AddMaxHealth()
+    public void AddMaxHealth(int addMaxHealth)
     {
-        maxHealth++;
+        maxHealth += addMaxHealth;
         ResetHealth();
         LifeUpdated(GetHealth(), GetMaxHealth());
     }

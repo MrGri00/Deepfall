@@ -19,6 +19,6 @@ public class PowerupGun : CollisionSystem
         other.gameObject.GetComponent<PlayerController>()?.SetWeapon(gun);
         other.gameObject.GetComponent<CanvasUpdater>().ReSub(gun);
 
-        GetComponent<HealthManager>().ReduceHealth(1);
+        GetComponent<HealthManager>().ReduceHealth(GetComponent<HealthManager>().GetMaxHealth());
     }
 }

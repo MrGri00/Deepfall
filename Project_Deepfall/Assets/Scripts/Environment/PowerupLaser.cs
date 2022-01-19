@@ -18,6 +18,6 @@ public class PowerupLaser : CollisionSystem
         other.gameObject.GetComponent<PlayerController>()?.SetWeapon(laser);
         other.gameObject.GetComponent<CanvasUpdater>().ReSub(laser);
 
-        GetComponent<HealthManager>().ReduceHealth(1);
+        GetComponent<HealthManager>().ReduceHealth(GetComponent<HealthManager>().GetMaxHealth());
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class CollisionSystem : MonoBehaviour
 {
     [SerializeField]
-    protected int dmg = 1;
+    protected int points = 1;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,6 +15,6 @@ public class CollisionSystem : MonoBehaviour
 
     protected virtual void OnCollision(Collision2D other)
     {
-        other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(dmg);
+        other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(points);
     }
 }

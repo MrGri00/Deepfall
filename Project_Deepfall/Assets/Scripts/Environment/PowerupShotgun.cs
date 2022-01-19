@@ -18,6 +18,6 @@ public class PowerupShotgun : CollisionSystem
         other.gameObject.GetComponent<PlayerController>()?.SetWeapon(shotgun);
         other.gameObject.GetComponent<CanvasUpdater>().ReSub(shotgun);
 
-        GetComponent<HealthManager>().ReduceHealth(1);
+        GetComponent<HealthManager>().ReduceHealth(GetComponent<HealthManager>().GetMaxHealth());
     }
 }

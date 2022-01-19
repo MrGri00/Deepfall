@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class CollisionSystemLaser : CollisionSystem
 {
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        OnCollision(collision);
-    }
-
     protected override void OnCollision(Collision2D other)
     {
         if (other.gameObject.CompareTag("Solid"))
@@ -19,7 +14,7 @@ public class CollisionSystemLaser : CollisionSystem
         else
         {
             WeaponSystemData wsd = Resources.Load<WeaponSystemData>("Laserdata");
-            other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(dmg);
+            other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(points);
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, wsd.fireForce);
         }
     }

@@ -29,7 +29,7 @@ public class DestructibleTiles : CollisionSystem
                 if (!isImmortal)
                     destructibleTilemap.SetTile(destructibleTilemap.WorldToCell(impactPoint), null);
 
-                other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(dmg);
+                other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(points);
             }
         }
     }
