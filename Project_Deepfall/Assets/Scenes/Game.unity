@@ -2429,6 +2429,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 324641519b013074089b172b8bc6d2c3, type: 2}
   shotPoint: {fileID: 1640693367}
+  slugsPerShot: 5
+  shotgunFan: 800
 --- !u!95 &292853222
 Animator:
   serializedVersion: 3

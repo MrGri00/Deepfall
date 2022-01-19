@@ -5,15 +5,21 @@ using UnityEngine;
 
 public class Shotgun : WeaponSystem
 {
+    [SerializeField]
+    private int slugsPerShot = 5;
+
+    [SerializeField]
+    private float shotgunFan = 50;
+
     public override event Action<int, int> UpdateAmmo = delegate { };
 
     public override void Shoot()
     {
-        GameObject[] projectile = new GameObject[weaponData.maxAmmo * 5];
+        GameObject[] projectile = new GameObject[slugsPerShot];
 
         _rigidBody = GetComponent<Rigidbody2D>();
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < slugsPerShot; i++)
         {
             projectile[i] = PoolingManager.Instance.GetPooledObject("Slug");
 
@@ -22,7 +28,7 @@ public class Shotgun : WeaponSystem
                 projectile[i].GetComponent<HealthManager>().ResetHealth();
                 projectile[i].transform.position = shotPoint.position;
 
-                float rand = UnityEngine.Random.Range(-50, 50);
+                float rand = UnityEngine.Random.Range(-shotgunFan, shotgunFan);
 
                 projectile[i].transform.rotation = new Quaternion(
                     shotPoint.rotation.x, 
