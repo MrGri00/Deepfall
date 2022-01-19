@@ -12,6 +12,7 @@ public class PowerupGun : CollisionSystem
 
         Gun gun = other.gameObject.AddComponent<Gun>();
 
+
         gun.weaponData = weaponData;
         gun.shotPoint = other.gameObject.GetComponent<PlayerController>().shotPoint;
 
