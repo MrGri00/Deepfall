@@ -16,12 +16,7 @@ public class PowerupGun : CollisionSystem
         gun.shotPoint = other.gameObject.GetComponent<PlayerController>().shotPoint;
 
         other.gameObject.GetComponent<PlayerController>()?.SetWeapon(gun);
-
-        // TESTING AREA
         other.gameObject.GetComponent<CanvasUpdater>().ReSub(gun);
-        other.gameObject.SetActive(false);
-        other.gameObject.SetActive(true);
-        // TESTING AREA
 
         GetComponent<HealthManager>().ReduceHealth(1);
     }

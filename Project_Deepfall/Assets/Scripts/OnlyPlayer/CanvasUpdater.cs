@@ -9,7 +9,8 @@ public class CanvasUpdater : MonoBehaviour
     public static event Action<int, int> UpdateCanvasAmmo = delegate { };
 
     HealthManager _healthManager = null;
-    WeaponSystem _weaponSystem = null;
+    
+    public WeaponSystem _weaponSystem = null;
 
     void OnEnable()
     {
@@ -41,11 +42,15 @@ public class CanvasUpdater : MonoBehaviour
 
     public void ReSub(HealthManager newHealthManager)
     {
+        _healthManager.LifeUpdated -= UpdateLife;
         _healthManager = newHealthManager;
+        _healthManager.LifeUpdated += UpdateLife;
     }
 
     public void ReSub(WeaponSystem newWeaponSystem)
     {
+        _weaponSystem.UpdateAmmo -= UpdateAmmo;
         _weaponSystem = newWeaponSystem;
+        _weaponSystem.UpdateAmmo += UpdateAmmo;
     }
 }
