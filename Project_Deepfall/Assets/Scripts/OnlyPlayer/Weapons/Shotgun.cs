@@ -9,7 +9,7 @@ public class Shotgun : WeaponSystem
     private int slugsPerShot = 5;
 
     [SerializeField]
-    private float shotgunFan = 50;
+    private float shotgunFan = 20;
 
     public override event Action<int, int> UpdateAmmo = delegate { };
 
@@ -30,14 +30,15 @@ public class Shotgun : WeaponSystem
 
                 float rand = UnityEngine.Random.Range(-shotgunFan, shotgunFan);
 
-                projectile[i].transform.rotation = new Quaternion(
-                    shotPoint.rotation.x, 
-                    shotPoint.rotation.y, 
-                    shotPoint.rotation.z + rand, 
-                    shotPoint.rotation.w);
+                Quaternion rotation = Quaternion.Euler(
+                    shotPoint.eulerAngles.x,
+                    shotPoint.eulerAngles.y,
+                    shotPoint.eulerAngles.z + rand);
+
+                projectile[i].transform.rotation = rotation;
 
                 projectile[i].SetActive(true);
-                projectile[i].GetComponent<Rigidbody2D>().AddForce(transform.up * weaponData.fireForce);
+                projectile[i].GetComponent<Rigidbody2D>().AddForce(projectile[i].transform.up * weaponData.fireForce);
             }
         }
 
