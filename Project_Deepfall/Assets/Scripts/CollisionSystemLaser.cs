@@ -10,12 +10,13 @@ public class CollisionSystemLaser : CollisionSystem
         if (other.gameObject.CompareTag("Solid"))
         {
             Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
+            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * Resources.Load<WeaponSystemData>("LaserData").fireForce);
         }
         else
         {
-            WeaponSystemData wsd = Resources.Load<WeaponSystemData>("Laserdata");
+            //WeaponSystemData wsd = Resources.Load<WeaponSystemData>("Laserdata");
             other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(points);
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, wsd.fireForce);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * Resources.Load<WeaponSystemData>("LaserData").fireForce);
         }
     }
 }

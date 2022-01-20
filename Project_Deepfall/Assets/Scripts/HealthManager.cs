@@ -29,10 +29,10 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth -= dmg;
             LifeUpdated(GetHealth(), GetMaxHealth());
-        }
 
-        if (currentHealth <= 0)
-            Death();
+            if (currentHealth <= 0)
+                Death();
+        }
     }
 
     public void ResetHealth()
