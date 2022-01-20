@@ -2424,11 +2424,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 292853219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9999313d86c646d4bb81a65c41e89b87, type: 3}
+  m_Script: {fileID: 11500000, guid: 71cf68750603a6445b6fd344a305f1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 2c0eba42f5574c04689a4b360081c4e7, type: 2}
+  weaponData: {fileID: 11400000, guid: 324641519b013074089b172b8bc6d2c3, type: 2}
   shotPoint: {fileID: 1640693367}
+  slugsPerShot: 5
+  shotgunFan: 20
 --- !u!95 &292853222
 Animator:
   serializedVersion: 3
