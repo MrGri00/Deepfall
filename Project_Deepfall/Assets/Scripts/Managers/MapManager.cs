@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    public static event Action MapSpawned = delegate { };
+
     public GameObject player;
     public Transform grid;
 
@@ -17,9 +20,10 @@ public class MapManager : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            rand = Random.Range(1, 7);
+            rand = UnityEngine.Random.Range(1, 7);
 
             PrintMapSection(rand);
+            MapSpawned();
         }
     }
 
@@ -29,9 +33,10 @@ public class MapManager : MonoBehaviour
 
         if (player.transform.position.y - renderDistance <= mapSpawnCoordinateY)
         {
-            rand = Random.Range(1, 7);
+            rand = UnityEngine.Random.Range(1, 7);
 
             PrintMapSection(rand);
+            MapSpawned();
         }
     }
 

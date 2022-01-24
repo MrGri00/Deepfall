@@ -2201,6 +2201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledLists:
+  - listName: Slime
+    prefabToPool: {fileID: 7635746299464882420, guid: 10da108ecac22d848babe07d72fce5fa, type: 3}
+    amount: 30
   - listName: Bullet
     prefabToPool: {fileID: 4896863960806283738, guid: 98c110deafea07d48840a85e97d363bc, type: 3}
     amount: 24
