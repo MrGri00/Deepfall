@@ -1737,6 +1737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  score: 0
 --- !u!114 &292853234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2796,6 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 1
+  score: 0
   isImmortal: 1
 --- !u!114 &886201591
 MonoBehaviour:
@@ -3476,6 +3478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 1
+  score: 0
   isImmortal: 0
 --- !u!114 &1037214990
 MonoBehaviour:
@@ -4926,10 +4929,6 @@ PrefabInstance:
     - target: {fileID: 7635746299464882420, guid: 10da108ecac22d848babe07d72fce5fa, type: 3}
       propertyPath: m_Name
       value: Slime
-      objectReference: {fileID: 0}
-    - target: {fileID: 7635746299464882420, guid: 10da108ecac22d848babe07d72fce5fa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10da108ecac22d848babe07d72fce5fa, type: 3}

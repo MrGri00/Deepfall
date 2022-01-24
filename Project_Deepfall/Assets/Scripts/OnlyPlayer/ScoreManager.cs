@@ -11,6 +11,16 @@ public class ScoreManager : MonoBehaviour
 
     int bestDepth = 0;
 
+    private void OnEnable()
+    {
+        CollisionSystem.AddCollisionScore += AddScore;
+    }
+
+    private void OnDisable()
+    {
+        CollisionSystem.AddCollisionScore -= AddScore;
+    }
+
     private void Update()
     {
         if ((int)transform.position.y < bestDepth)

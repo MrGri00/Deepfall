@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 1
+  score: 0
   isImmortal: 0
 --- !u!114 &7768617993818424921
 MonoBehaviour:
