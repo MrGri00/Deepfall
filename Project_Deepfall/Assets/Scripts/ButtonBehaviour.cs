@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private Canvas canvasToToggle;
+    [SerializeField] private Canvas pauseCanvas;
+    [SerializeField] private Canvas settingsCanvas;
     
     InputSystemKeyboard inputSystem = null;
 
@@ -20,33 +20,43 @@ public class ButtonBehaviour : MonoBehaviour
     private void OnEnable()
     {
         if (inputSystem != null)
-            inputSystem.PauseGame += OpenCanvas;
+            inputSystem.PauseGame += OpenPauseCanvas;
     }
 
     private void OnDisable()
     {
         if (inputSystem != null)
-            inputSystem.PauseGame -= OpenCanvas;
+            inputSystem.PauseGame -= OpenPauseCanvas;
     }
 
-    public void OpenCanvas()
+    public void OpenPauseCanvas()
     {
         if (inputSystem != null)
         {
             inputSystem.isPaused = true;
             Time.timeScale = 0f;
         }
-        canvasToToggle.gameObject.SetActive(true);
+        pauseCanvas.gameObject.SetActive(true);
     }
 
-    public void CloseCanvas()
+    public void ClosePauseCanvas()
     {
         if (inputSystem != null)
         {
             inputSystem.isPaused = false;
             Time.timeScale = 1f;
         }
-        canvasToToggle.gameObject.SetActive(false);
+        pauseCanvas.gameObject.SetActive(false);
+    }
+
+    public void OpenSettingsCanvas()
+    {
+        settingsCanvas.gameObject.SetActive(true);
+    }
+
+    public void CloseSettingsCanvas()
+    {
+        settingsCanvas.gameObject.SetActive(false);
     }
 
     public void PlayGame()
@@ -57,7 +67,6 @@ public class ButtonBehaviour : MonoBehaviour
             Time.timeScale = 1f;
         }
         SceneTransition.GoToScene("Game");
-        //SceneTransition.NextScene();
     }
 
     public void MainMenu()
@@ -82,6 +91,7 @@ public class ButtonBehaviour : MonoBehaviour
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
+
         Application.Quit();
     }
 }
