@@ -1890,6 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92cc446086f5a2b4fb69b7edfbbc216c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 292853219}
 --- !u!1 &827436177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +1988,72 @@ MonoBehaviour:
   - listName: Ray
     prefabToPool: {fileID: 8995059142480517204, guid: 0b4483fb3cc82e944b8c615bc92d522e, type: 3}
     amount: 9
+  - listName: GunPowerup
+    prefabToPool: {fileID: 3771369159281761995, guid: 103357213ece13648aabe3885a4a79de, type: 3}
+    amount: 10
+  - listName: ShotgunPowerup
+    prefabToPool: {fileID: 2519793195375832916, guid: 71d46dfbc183129409d22facb925daea, type: 3}
+    amount: 10
+  - listName: LaserPowerup
+    prefabToPool: {fileID: 630113630634391108, guid: f8ac0d7e46089624db5ec9d908a92a63, type: 3}
+    amount: 10
+  - listName: HealthPowerup
+    prefabToPool: {fileID: 8959996595046558471, guid: 20ed92edb79efbc4dbb6b6140bb60ee3, type: 3}
+    amount: 10
+  - listName: Solid1
+    prefabToPool: {fileID: 4914302947897887195, guid: 82e67f6e65008134ea078908ffa29a87, type: 3}
+    amount: 20
+  - listName: Solid2
+    prefabToPool: {fileID: 4593430663174487636, guid: c49e2b5745867a94ba046ca78b3f334d, type: 3}
+    amount: 20
+  - listName: Solid3
+    prefabToPool: {fileID: 5414292137029023900, guid: e6fa0e6568a9e7b47b07167d724ff1ed, type: 3}
+    amount: 20
+  - listName: Solid4
+    prefabToPool: {fileID: 8670055339751644427, guid: c3e6a46d99db94b428004c369e6a28cd, type: 3}
+    amount: 20
+  - listName: Solid5
+    prefabToPool: {fileID: 8728368642529347828, guid: 7c8aacc4175db214081f5e9904f3f561, type: 3}
+    amount: 20
+  - listName: Solid6
+    prefabToPool: {fileID: 8303960080224822000, guid: 3053cd6d926206d449e76f993b185270, type: 3}
+    amount: 20
+  - listName: Destructible1
+    prefabToPool: {fileID: 1995255651337158902, guid: 2f5f627e950ab8749b303e788c60ed2a, type: 3}
+    amount: 20
+  - listName: Destructible2
+    prefabToPool: {fileID: 3319886734756804607, guid: 6b0b97f6d17c7814f8ca86b333b54bb4, type: 3}
+    amount: 20
+  - listName: Destructible3
+    prefabToPool: {fileID: 406847835954194178, guid: 03ba5f6796c51ea4ba0d7ee2a081270d, type: 3}
+    amount: 20
+  - listName: Destructible4
+    prefabToPool: {fileID: 7921144989471846540, guid: cd27b53d14b9e3a46aa0992bde48ee68, type: 3}
+    amount: 20
+  - listName: Destructible5
+    prefabToPool: {fileID: 7296952605926885799, guid: 4f33284ac0292014c856c3f41a451286, type: 3}
+    amount: 20
+  - listName: Destructible6
+    prefabToPool: {fileID: 1753030483660948764, guid: 37e5e51f4e5a86747b0495f7c5be7512, type: 3}
+    amount: 20
+  - listName: Background1
+    prefabToPool: {fileID: 4155103910107190152, guid: c28884a04e5a8814a8c82c64072c4fe6, type: 3}
+    amount: 20
+  - listName: Background2
+    prefabToPool: {fileID: 2106978201214678768, guid: 5fb34575e425cf440be70ca72de9fb6e, type: 3}
+    amount: 20
+  - listName: Background3
+    prefabToPool: {fileID: 5843491063883159378, guid: 37e0f6a42e0d1f94981b9a0c7405cca7, type: 3}
+    amount: 20
+  - listName: Background4
+    prefabToPool: {fileID: 5623453214354309525, guid: 329627586eb583143a7480d370c4bc54, type: 3}
+    amount: 20
+  - listName: Background5
+    prefabToPool: {fileID: 8725946102912849053, guid: 06fcf626b12df1c4489290d591e5dc7c, type: 3}
+    amount: 20
+  - listName: Background6
+    prefabToPool: {fileID: 125460021013076968, guid: f627a2c7140c84e45979086fe074a713, type: 3}
+    amount: 20
 --- !u!1 &886201584
 GameObject:
   m_ObjectHideFlags: 0
