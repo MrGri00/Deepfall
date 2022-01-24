@@ -7,15 +7,20 @@ public class CanvasUpdater : MonoBehaviour
 {
     public static event Action<int, int> UpdateCanvasLife = delegate { };
     public static event Action<int, int> UpdateCanvasAmmo = delegate { };
+    public static event Action<int> UpdateCanvasScore = delegate { };
 
     HealthManager _healthManager = null;
+    ScoreManager _scoreManager = null;
     
-    public WeaponSystem _weaponSystem = null;
+    [HideInInspector] public WeaponSystem _weaponSystem = null;
 
     void OnEnable()
     {
         _healthManager = GetComponent<HealthManager>();
         _healthManager.LifeUpdated += UpdateLife;
+
+        _scoreManager = GetComponent<ScoreManager>();
+        _scoreManager.ScoreUpdated += UpdateScore;
 
         _weaponSystem = GetComponent<WeaponSystem>();
         _weaponSystem.UpdateAmmo += UpdateAmmo;
@@ -25,6 +30,9 @@ public class CanvasUpdater : MonoBehaviour
     {
         _healthManager.LifeUpdated -= UpdateLife;
         _healthManager = null;
+
+        _scoreManager.ScoreUpdated -= UpdateScore;
+        _scoreManager = null;
 
         _weaponSystem.UpdateAmmo -= UpdateAmmo;
         _weaponSystem = null;
@@ -38,6 +46,11 @@ public class CanvasUpdater : MonoBehaviour
     void UpdateAmmo(int currentAmmo, int maxAmmo)
     {
         UpdateCanvasAmmo(currentAmmo, maxAmmo);
+    }
+
+    void UpdateScore(int newScore)
+    {
+        UpdateCanvasScore(newScore);
     }
 
     public void ReSub(HealthManager newHealthManager)
