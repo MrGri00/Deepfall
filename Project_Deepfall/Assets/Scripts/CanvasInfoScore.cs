@@ -25,6 +25,6 @@ public class CanvasInfoScore : MonoBehaviour
 
     private void UpdateText(int score)
     {
-        text.text = score + "";
+        text.text = String.Format("{0:00000}", score);
     }
 }
