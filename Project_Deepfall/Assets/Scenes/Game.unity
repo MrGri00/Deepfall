@@ -1891,6 +1891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 292853219}
+  grid: {fileID: 1705649112}
+  renderDistance: 18
 --- !u!1 &827436177
 GameObject:
   m_ObjectHideFlags: 0
