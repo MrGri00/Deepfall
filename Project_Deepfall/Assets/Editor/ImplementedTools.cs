@@ -26,14 +26,16 @@ public class ImplementedTools : Editor
     [MenuItem("ImplementedTools/Sprites Auto Name Format &#r", false, 1)] // & = alt, # = shift, r
     public static void SpritesAutoNameFormat()
     {
-        string[] sprites = AssetDatabase.FindAssets("t:sprite");
+        string[] sprites = AssetDatabase.FindAssets("t:sprite", null);
 
         for (int i = 0; i < sprites.Length; i++)
         {
-            AssetDatabase.RenameAsset(AssetDatabase.GUIDToAssetPath(sprites[i]), RenameNoUnderscore(sprites[i]));
+            //AssetDatabase.RenameAsset(AssetDatabase.GUIDToAssetPath(sprites[i]), RenameNoUnderscore(sprites[i]));
+
+            //Debug.Log(AssetDatabase.TryGetGUIDAndLocalFileIdentifier<>);
         }
 
-        AssetDatabase.SaveAssets();
+        //AssetDatabase.SaveAssets();
     }
 
     static string RenameNoUnderscore(string name)
