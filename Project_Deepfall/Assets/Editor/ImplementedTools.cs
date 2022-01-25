@@ -44,7 +44,7 @@ public class ImplementedTools : MonoBehaviour
         {
             for (int i = 0; i < name.Length; i++)
             {
-                if (!name[i].Equals('_'))
+                if (name[i] != '_')
                     final += name[i];
             }
 
@@ -52,5 +52,17 @@ public class ImplementedTools : MonoBehaviour
         }
         else
             return name;
+    }
+
+    [MenuItem("ImplementedTools/Rename Test", false, 1)]
+    public static void RenameTest()
+    {
+        string a = "Hola_Que_Tal";
+
+        EditorUtility.DisplayDialog("Test 1", a, "Ok");
+
+        a = RenameNoUnderscore(a);
+
+        EditorUtility.DisplayDialog("Test 2", a, "Ok");
     }
 }

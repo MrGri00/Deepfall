@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7921144989471846539}
   - component: {fileID: 7921144989471846538}
   m_Layer: 6
-  m_Name: Destructible(4)
+  m_Name: Destructible004
   m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
