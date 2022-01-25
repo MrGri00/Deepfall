@@ -7,7 +7,7 @@ using UnityEditor;
 [ExecuteInEditMode]
 public class ImplementedTools : MonoBehaviour
 {
-    [MenuItem("ImplementedTools/Toggle Active", false, 1)]
+    [MenuItem("ImplementedTools/Toggle Active &#t", false, 1)] // & = alt, # = shift, t
     public static void ToggleActive()
     {
         Transform[] selectedElements = Selection.GetTransforms(SelectionMode.TopLevel | SelectionMode.Editable);
@@ -23,7 +23,7 @@ public class ImplementedTools : MonoBehaviour
             EditorUtility.DisplayDialog("Error", "You must select at least one (1) element in the scene", "Ok");
     }
 
-    [MenuItem("ImplementedTools/Sprites Auto Name Format", false, 1)]
+    [MenuItem("ImplementedTools/Sprites Auto Name Format &#r", false, 1)] // & = alt, # = shift, r
     public static void SpritesAutoNameFormat()
     {
         string[] sprites = AssetDatabase.FindAssets("t:sprite");
@@ -44,7 +44,7 @@ public class ImplementedTools : MonoBehaviour
         {
             for (int i = 0; i < name.Length; i++)
             {
-                if (!name[i].Equals("_"))
+                if (!name[i].Equals('_'))
                     final += name[i];
             }
 
