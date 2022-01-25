@@ -7,7 +7,7 @@ public class EnemyController : FatherController
     [HideInInspector]
     public EnemySwitches _enemySwitches;
 
-    private void Awake()
+    protected void Awake()
     {
         _enemySwitches = GetComponent<EnemySwitches>();
         _animatorController = GetComponent<Animator>();

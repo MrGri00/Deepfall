@@ -4,5 +4,32 @@ using UnityEngine;
 
 public class EnemySwitches : MonoBehaviour
 {
-    // Enemy switches will be implemented here
+    private GameObject player;
+    private Rigidbody2D _rigidBody;
+
+    [SerializeField] private float followDistance = 3;
+    private float distance;
+
+    private Vector3 playerOffset;
+
+    private void Awake()
+    {
+        player = GameObject.FindWithTag("Player");
+        _rigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    public bool GetIsFalling()
+    {
+        return (_rigidBody.velocity.y < -0.2f);
+    }
+
+    public bool PlayerInRange()
+    {
+        playerOffset = player.transform.position - transform.position;
+        playerOffset = new Vector3(playerOffset.x, playerOffset.y, 0);
+
+        distance = playerOffset.magnitude;
+
+        return distance < followDistance;
+    }
 }

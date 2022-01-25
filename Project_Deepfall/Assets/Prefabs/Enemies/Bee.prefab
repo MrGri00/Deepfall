@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 3089520768337139876}
   - component: {fileID: 1756748709204056736}
   - component: {fileID: 1767201146383241176}
+  - component: {fileID: 1279715175209550747}
+  - component: {fileID: 5826927523899094435}
+  - component: {fileID: 6356487265203437980}
   m_Layer: 11
   m_Name: Bee
   m_TagString: Untagged
@@ -203,7 +206,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4824772311029594978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 1
+  score: 5
 --- !u!114 &1756748709204056736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,3 +260,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354eaacdf99f6f542acc5ecd1145ab0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1279715175209550747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824772311029594982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb752fe44930914b92ad3223426c253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 0}
+  _enemySwitches: {fileID: 0}
+--- !u!114 &5826927523899094435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824772311029594982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96210eac2a767b498527a959aa0c66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followDistance: 9
+--- !u!114 &6356487265203437980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824772311029594982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa64887aa6c6fe45932926ede947523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  jumpForce: 0

@@ -18,7 +18,7 @@ public class MovementBehaviour : MonoBehaviour
 
     public void Move()
     {
-
+        //_rigidBody.velocity = new Vector2(transform.right * speed, _rigidBody.velocity.y);
     }
 
     public void Move(Vector2 dir)
@@ -35,5 +35,25 @@ public class MovementBehaviour : MonoBehaviour
     public void Jump()
     {
         _rigidBody.velocity = Vector2.up * jumpForce;
+    }
+
+    public void FlyTo(GameObject target)
+    {
+        Vector2 playerOffset;
+        Vector2 playerOffsetProjected;
+        Vector2 playerOffsetNormalized;
+
+        playerOffset = target.transform.position - transform.position;
+
+        playerOffset = playerOffset.normalized;
+
+        //transform.position += playerOffsetNormalized * speed;
+
+        _rigidBody.velocity = playerOffset * speed;
+    }
+
+    public void StopMoving()
+    {
+        _rigidBody.velocity = new Vector2(0, 0);
     }
 }
