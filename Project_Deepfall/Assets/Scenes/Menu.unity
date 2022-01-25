@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 271166119}
   - component: {fileID: 271166118}
   m_Layer: 5
-  m_Name: Settings_Canvas
+  m_Name: SettingsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1515,7 +1515,7 @@ GameObject:
   - component: {fileID: 751847402}
   - component: {fileID: 751847403}
   m_Layer: 5
-  m_Name: Volume_Slider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1771,7 +1771,7 @@ GameObject:
   - component: {fileID: 992687881}
   - component: {fileID: 992687880}
   m_Layer: 5
-  m_Name: Controls_Canvas
+  m_Name: ControlsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2338,7 +2338,7 @@ GameObject:
   - component: {fileID: 1162042288}
   - component: {fileID: 1162042287}
   m_Layer: 5
-  m_Name: Close_Controls_Button
+  m_Name: CloseControlsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2654,7 +2654,7 @@ GameObject:
   - component: {fileID: 1213286803}
   - component: {fileID: 1213286802}
   m_Layer: 5
-  m_Name: Play_Button
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2871,7 +2871,7 @@ GameObject:
   - component: {fileID: 1294172590}
   - component: {fileID: 1294172589}
   m_Layer: 5
-  m_Name: Settings_Button
+  m_Name: SettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3318,7 +3318,7 @@ GameObject:
   - component: {fileID: 1331048091}
   - component: {fileID: 1331048090}
   m_Layer: 5
-  m_Name: Resolution_Dropdown
+  m_Name: ResolutionDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4298,7 +4298,7 @@ GameObject:
   - component: {fileID: 1649036768}
   - component: {fileID: 1649036767}
   m_Layer: 5
-  m_Name: Exit_Button
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4666,7 +4666,7 @@ GameObject:
   - component: {fileID: 1787101140}
   - component: {fileID: 1787101139}
   m_Layer: 5
-  m_Name: Close_Controls_Button (1)
+  m_Name: CloseSettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4947,7 +4947,7 @@ GameObject:
   - component: {fileID: 1899103959}
   - component: {fileID: 1899103960}
   m_Layer: 5
-  m_Name: Fullscreen_Toggle
+  m_Name: FullscreenToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5122,7 +5122,7 @@ GameObject:
   - component: {fileID: 1973412608}
   - component: {fileID: 1973412607}
   m_Layer: 5
-  m_Name: Controls_Button
+  m_Name: ControlsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

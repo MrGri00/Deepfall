@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853fe35e34354894ea34bbd0fa0a00a3, type: 3}
+  m_Name: PlaStaFalling
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: d639281b7f612424b864489ea5306779, type: 2}
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: 36cd401e16cc2994c912b8027b927481, type: 2}
+    - {fileID: 11400000, guid: b2935bac88803d942a702611c1609e5e, type: 2}
+    trueState: {fileID: 11400000, guid: bbb53a4bb68b6434d9b64cc7a5b294d7, type: 2}
+    falseState: {fileID: 0}
+  - decisions:
+    - {fileID: 11400000, guid: b2935bac88803d942a702611c1609e5e, type: 2}
+    trueState: {fileID: 11400000, guid: 02241ea4bd16aed42a93696b1bd6151a, type: 2}
+    falseState: {fileID: 0}
