@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 
 [ExecuteInEditMode]
-public class ImplementedTools : MonoBehaviour
+public class ImplementedTools : Editor
 {
     [MenuItem("ImplementedTools/Toggle Active &#t", false, 1)] // & = alt, # = shift, t
     public static void ToggleActive()
