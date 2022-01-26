@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class SlimeController : EnemyController
 {
-    
+    private void Update()
+    {
+        _movementBehaviour.Move();
+    }
 }

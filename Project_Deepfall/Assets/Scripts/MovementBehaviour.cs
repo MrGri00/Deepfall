@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MovementBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    private LayerMask platformsLayer;
+
     public float speed;
     public float jumpForce;
 
@@ -18,7 +21,10 @@ public class MovementBehaviour : MonoBehaviour
 
     public void Move()
     {
-        //_rigidBody.velocity = new Vector2(transform.right * speed, _rigidBody.velocity.y);
+        if (WallInFront())
+            lastDir *= -1;
+
+        _rigidBody.velocity = new Vector2(lastDir * speed, _rigidBody.velocity.y);
     }
 
     public void Move(Vector2 dir)
@@ -40,14 +46,10 @@ public class MovementBehaviour : MonoBehaviour
     public void FlyTo(GameObject target)
     {
         Vector2 playerOffset;
-        Vector2 playerOffsetProjected;
-        Vector2 playerOffsetNormalized;
 
         playerOffset = target.transform.position - transform.position;
 
         playerOffset = playerOffset.normalized;
-
-        //transform.position += playerOffsetNormalized * speed;
 
         _rigidBody.velocity = playerOffset * speed;
     }
@@ -55,5 +57,15 @@ public class MovementBehaviour : MonoBehaviour
     public void StopMoving()
     {
         _rigidBody.velocity = new Vector2(0, 0);
+    }
+
+    private bool WallInFront()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(GetComponent<PolygonCollider2D>().bounds.center,
+            GetComponent<PolygonCollider2D>().bounds.size, 0f,
+            Vector2.right, 0.1f,
+            platformsLayer);
+
+        return raycastHit.collider != null;
     }
 }
