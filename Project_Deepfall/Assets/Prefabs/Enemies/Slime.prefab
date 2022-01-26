@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 558034701507737223}
   - component: {fileID: 7311577622963262982}
   - component: {fileID: 3000613081901527383}
+  - component: {fileID: 7050659167259122323}
   m_Layer: 11
   m_Name: Slime
   m_TagString: Untagged
@@ -244,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd44cfed00f9d144495e2d3e62445dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
+  currentState: {fileID: 11400000, guid: 66f0699e2df2eea4883f92630bb37704, type: 2}
   _enemySwitches: {fileID: 0}
 --- !u!114 &3000613081901527383
 MonoBehaviour:
@@ -263,3 +264,17 @@ MonoBehaviour:
     m_Bits: 64
   speed: 2
   jumpForce: 0
+--- !u!114 &7050659167259122323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7635746299464882420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13749682ea4c8794a8f8482a2bea88ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFromCameraX: 5
+  distanceFromCameraY: 5

@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: SliStaFalling
   m_EditorClassIdentifier: 
   actions: []
-  transitions: []
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: c91db029eae5f4348930ea6dba734776, type: 2}
+    trueState: {fileID: 0}
+    falseState: {fileID: 11400000, guid: 66f0699e2df2eea4883f92630bb37704, type: 2}

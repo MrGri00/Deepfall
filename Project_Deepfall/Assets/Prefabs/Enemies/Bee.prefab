@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 1279715175209550747}
   - component: {fileID: 5826927523899094435}
   - component: {fileID: 6356487265203437980}
+  - component: {fileID: 62109029700949779}
   m_Layer: 11
   m_Name: Bee
   m_TagString: Untagged
@@ -272,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb752fe44930914b92ad3223426c253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
+  currentState: {fileID: 11400000, guid: fb818dee66ab3244a8b12f4f5fedbafe, type: 2}
   _enemySwitches: {fileID: 0}
 --- !u!114 &5826927523899094435
 MonoBehaviour:
@@ -299,5 +300,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa64887aa6c6fe45932926ede947523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformsLayer:
+    serializedVersion: 2
+    m_Bits: 0
   speed: 1
   jumpForce: 0
+--- !u!114 &62109029700949779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824772311029594982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13749682ea4c8794a8f8482a2bea88ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFromCameraX: 5
+  distanceFromCameraY: 5
