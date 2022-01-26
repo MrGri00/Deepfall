@@ -7,7 +7,10 @@ public class EnemySwitches : MonoBehaviour
     private GameObject player;
     private Rigidbody2D _rigidBody;
 
+    [SerializeField] private LayerMask platformsLayer;
+
     [SerializeField] private float followDistance = 3;
+
     private float distance;
 
     private Vector3 playerOffset;
@@ -31,5 +34,15 @@ public class EnemySwitches : MonoBehaviour
         distance = playerOffset.magnitude;
 
         return distance < followDistance;
+    }
+
+    public bool GetIsGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(GetComponent<PolygonCollider2D>().bounds.center,
+            GetComponent<PolygonCollider2D>().bounds.size, 0f,
+            Vector2.down, 0.1f,
+            platformsLayer);
+
+        return (raycastHit.collider != null);
     }
 }

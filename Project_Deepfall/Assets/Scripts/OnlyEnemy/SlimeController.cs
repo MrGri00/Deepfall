@@ -6,6 +6,7 @@ public class SlimeController : EnemyController
 {
     private void Update()
     {
-        _movementBehaviour.Move();
+        if (_enemySwitches.GetIsGrounded())
+            _movementBehaviour.Move();
     }
 }
