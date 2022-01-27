@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853fe35e34354894ea34bbd0fa0a00a3, type: 3}
   m_Name: SliStaFalling
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 11400000, guid: a6b390ad4b27b934f931fbd9a75a51fb, type: 2}
   transitions:
   - decisions:
     - {fileID: 11400000, guid: c91db029eae5f4348930ea6dba734776, type: 2}

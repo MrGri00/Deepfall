@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853fe35e34354894ea34bbd0fa0a00a3, type: 3}
   m_Name: BeeStaSleeping
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: a2cad8ae81bce1f4db72f7113d0a591f, type: 2}
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: 4a695dbe97b0443409b204746c71fbfa, type: 2}
+    trueState: {fileID: 11400000, guid: 30f16e0a1ed936f4c82e1f45a5cb7666, type: 2}
+    falseState: {fileID: 0}
