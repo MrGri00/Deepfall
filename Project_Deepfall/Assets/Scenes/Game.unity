@@ -2393,6 +2393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb4fee30b0a12e478ace694bd9bada4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chanceMargin: 20
 --- !u!1 &472550640
 GameObject:
   m_ObjectHideFlags: 3
