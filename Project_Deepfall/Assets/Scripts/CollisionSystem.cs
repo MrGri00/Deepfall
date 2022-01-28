@@ -17,12 +17,18 @@ public class CollisionSystem : MonoBehaviour
     {
         OnCollision(collision);
 
-        if (!collision.gameObject.CompareTag("Solid"))
-            AddCollisionScore(score);
+        CollisionScore(collision);            
     }
 
     protected virtual void OnCollision(Collision2D other)
     {
         other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(points);
+    }
+
+    protected virtual void CollisionScore(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy") ||
+            other.gameObject.CompareTag("Projectile"))
+            AddCollisionScore(score);
     }
 }

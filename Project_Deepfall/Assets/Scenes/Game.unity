@@ -3462,6 +3462,9 @@ MonoBehaviour:
   - listName: Slime
     prefabToPool: {fileID: 7635746299464882420, guid: 10da108ecac22d848babe07d72fce5fa, type: 3}
     amount: 30
+  - listName: Bee
+    prefabToPool: {fileID: 4824772311029594982, guid: 91a362f586a8a224693b81fd395e7659, type: 3}
+    amount: 30
   - listName: Bullet
     prefabToPool: {fileID: 4896863960806283738, guid: 98c110deafea07d48840a85e97d363bc, type: 3}
     amount: 24
@@ -7275,6 +7278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c808066925c2eb4da47c06c7459c1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chanceMargin: 20
 --- !u!1 &1933002368
 GameObject:
   m_ObjectHideFlags: 0

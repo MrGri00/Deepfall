@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public float chanceMargin = 70f;
+
+    private GameObject enemy = null;
+
     private int enemySpawnCoordinateY = -3;
+    private float enemySpawnCoordinateX = 0;
+
+    private bool enemyType = false;
+
+    private float chance = 0f;
+
     private void OnEnable()
     {
         MapManager.MapSpawned += EnemySpawn;
@@ -17,14 +27,30 @@ public class EnemyManager : MonoBehaviour
 
     void EnemySpawn()
     {
-        GameObject enemy = PoolingManager.Instance.GetPooledObject("Slime");
+        chance = UnityEngine.Random.Range(1f, 100f);
 
-        float rand = UnityEngine.Random.Range(-4.5f, 4.5f);
+        if (chance <= chanceMargin)
+        {
+            enemySpawnCoordinateX = UnityEngine.Random.Range(-4.5f, 4.5f);
 
-        enemy.GetComponent<HealthManager>().ResetHealth();
-        enemy.transform.position = new Vector3(rand, enemySpawnCoordinateY, 0);
+            enemyType = Random.value < 0.5f;
 
-        enemy.SetActive(true);
+            switch (enemyType)
+            {
+                case true:
+                    enemy = PoolingManager.Instance.GetPooledObject("Slime");
+                    break;
+
+                case false:
+                    enemy = PoolingManager.Instance.GetPooledObject("Bee");
+                    break;
+            }
+
+            enemy.GetComponent<HealthManager>().ResetHealth();
+            enemy.transform.position = new Vector3(enemySpawnCoordinateX, enemySpawnCoordinateY, 0);
+
+            enemy.SetActive(true);
+        }
 
         enemySpawnCoordinateY -= 6;
     }
