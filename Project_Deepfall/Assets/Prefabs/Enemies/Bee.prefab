@@ -290,7 +290,7 @@ MonoBehaviour:
   platformsLayer:
     serializedVersion: 2
     m_Bits: 0
-  followDistance: 9
+  followDistance: 6
 --- !u!114 &6356487265203437980
 MonoBehaviour:
   m_ObjectHideFlags: 0

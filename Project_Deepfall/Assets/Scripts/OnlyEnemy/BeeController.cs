@@ -17,5 +17,7 @@ public class BeeController : EnemyController
             _movementBehaviour.FlyTo(player);
         else
             _movementBehaviour.StopMoving();
+
+        currentState.UpdateState(this);
     }
 }

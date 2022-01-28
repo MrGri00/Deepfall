@@ -8,5 +8,7 @@ public class SlimeController : EnemyController
     {
         if (_enemySwitches.GetIsGrounded())
             _movementBehaviour.Move();
+
+        currentState.UpdateState(this);
     }
 }
