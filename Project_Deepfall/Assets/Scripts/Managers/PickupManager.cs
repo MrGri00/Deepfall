@@ -8,30 +8,26 @@ public class PickupManager : MonoBehaviour
 
     GameObject pickup = null;
 
-    private int pickupSpawnCoordinateY = -3;
-    private float pickupSpawnCoordinateX = 0f;
     private float chance = 0f;
     private int type = 0;
 
     private void OnEnable()
     {
-        MapManager.MapSpawned += PickupSpawn;
+        DestructibleTiles.TileDestroyed += PickupSpawn;
     }
 
     private void OnDisable()
     {
-        MapManager.MapSpawned -= PickupSpawn;
+        DestructibleTiles.TileDestroyed -= PickupSpawn;
     }
 
-    void PickupSpawn()
+    void PickupSpawn(Vector3 spawnPos)
     {
         chance = UnityEngine.Random.Range(1f, 100f);
 
         if (chance <= chanceMargin)
         {
             type = UnityEngine.Random.Range(0, 4);
-
-            pickupSpawnCoordinateX = UnityEngine.Random.Range(-4.5f, 4.5f);
 
             switch (type)
             {
@@ -53,11 +49,9 @@ public class PickupManager : MonoBehaviour
             }
 
             pickup.GetComponent<HealthManager>().ResetHealth();
-            pickup.transform.position = new Vector3(pickupSpawnCoordinateX, pickupSpawnCoordinateY, 0);
+            pickup.transform.position = spawnPos;
 
             pickup.SetActive(true);
         }
-
-        pickupSpawnCoordinateY -= 6;
     }
 }
