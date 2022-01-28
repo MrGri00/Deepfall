@@ -8,25 +8,36 @@ public class ButtonBehaviour : MonoBehaviour
 {
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private Canvas settingsCanvas;
-    
+    [SerializeField] private RectTransform gameOverPanel;
+
     InputSystemKeyboard inputSystem = null;
+    HealthManager playerHealthManager = null;
 
     private void Awake()
     {
         if (FindObjectOfType<InputSystemKeyboard>())
+        {
             inputSystem = FindObjectOfType<InputSystemKeyboard>();
+            playerHealthManager = inputSystem.gameObject.GetComponent<HealthManager>();
+        }
     }
 
     private void OnEnable()
     {
         if (inputSystem != null)
+        {
             inputSystem.PauseGame += OpenPauseCanvas;
+            playerHealthManager.Death += DeathMenu;
+        }
     }
 
     private void OnDisable()
     {
         if (inputSystem != null)
+        {
             inputSystem.PauseGame -= OpenPauseCanvas;
+            playerHealthManager.Death -= DeathMenu;
+        }
     }
 
     public void OpenPauseCanvas()
@@ -52,6 +63,7 @@ public class ButtonBehaviour : MonoBehaviour
     public void OpenSettingsCanvas()
     {
         settingsCanvas.gameObject.SetActive(true);
+        pauseCanvas.gameObject.SetActive(false);
     }
 
     public void CloseSettingsCanvas()
@@ -93,6 +105,13 @@ public class ButtonBehaviour : MonoBehaviour
         #endif
 
         Application.Quit();
+    }
+
+    void DeathMenu()
+    {
+        pauseCanvas.gameObject.SetActive(false);
+        settingsCanvas.gameObject.SetActive(false);
+        gameOverPanel.gameObject.SetActive(true);
     }
 }
 
