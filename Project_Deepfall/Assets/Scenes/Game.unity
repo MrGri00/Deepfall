@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba1bb8bf9d3a1d4b8d678bea7dd78a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceMargin: 100
+  chanceMargin: 30
 --- !u!1 &246839625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,6 +3530,18 @@ MonoBehaviour:
   - listName: HealthPowerup
     prefabToPool: {fileID: 8959996595046558471, guid: 20ed92edb79efbc4dbb6b6140bb60ee3, type: 3}
     amount: 10
+  - listName: BlueGemPickup
+    prefabToPool: {fileID: 3989404015602776124, guid: ab64418570b9c374280efc2a32d43136, type: 3}
+    amount: 50
+  - listName: GreenGemPickup
+    prefabToPool: {fileID: 2458743049880482784, guid: 0f2bb8a9b54d03d4f82b7c362c7e8dba, type: 3}
+    amount: 50
+  - listName: YellowGemPickup
+    prefabToPool: {fileID: 4383515783346630222, guid: 22b6c2596065edf4485e26b83930961a, type: 3}
+    amount: 50
+  - listName: HealthPickup
+    prefabToPool: {fileID: 1501906410603310336, guid: 29f4128ed8476b24fa3d2a37dcb9ab7d, type: 3}
+    amount: 50
   - listName: Solid1
     prefabToPool: {fileID: 4914302947897887195, guid: 82e67f6e65008134ea078908ffa29a87, type: 3}
     amount: 20
