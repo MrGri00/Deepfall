@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3000970071882265393}
   - component: {fileID: 6991048942883261506}
   - component: {fileID: 4514218806839284851}
+  - component: {fileID: 8428605649974139628}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Projectile
@@ -215,9 +216,9 @@ AudioSource:
   m_GameObject: {fileID: 4896863960806283738}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 43776a77f4ba76e4d98e345b92c52462, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 69ed25ec4721ada4b9307156c3ed3cab, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -302,3 +303,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8428605649974139628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4896863960806283738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017f0db2043577546a2bd776d64db705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
