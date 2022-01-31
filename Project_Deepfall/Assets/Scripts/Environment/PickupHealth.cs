@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class PickupHealth : CollisionSystem
         other.gameObject.GetComponent<HealthManager>()?.AddHealth(points);
 
         if (other.gameObject.CompareTag("Player"))
+        {
+            GetComponent<AudioSource>().Play();
             GetComponent<HealthManager>().ReduceHealth(GetComponent<HealthManager>().GetMaxHealth());
+        }
     }
 }

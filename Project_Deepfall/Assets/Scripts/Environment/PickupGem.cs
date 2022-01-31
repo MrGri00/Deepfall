@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class PickupGem : CollisionSystem
         other.gameObject.GetComponent<ScoreManager>()?.AddScore(score);
 
         if (other.gameObject.CompareTag("Player"))
+        {
+            GetComponent<AudioSource>().Play();
             GetComponent<HealthManager>().ReduceHealth(GetComponent<HealthManager>().GetMaxHealth());
+        }
     }
 }
