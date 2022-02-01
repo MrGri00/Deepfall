@@ -91,6 +91,11 @@ public class ButtonBehaviour : MonoBehaviour
         SceneTransition.GoToScene(1);
     }
 
+    public void Credits()
+    {
+        SceneTransition.GoToScene("Credits");
+    }
+
     public void ResetScene()
     {
         inputSystem.isPaused = false;
