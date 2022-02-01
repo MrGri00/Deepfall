@@ -13,12 +13,12 @@ public class PickupManager : MonoBehaviour
 
     private void OnEnable()
     {
-        DestructibleTiles.TileDestroyed += PickupSpawn;
+        TilemapController.TileDestroyed += PickupSpawn;
     }
 
     private void OnDisable()
     {
-        DestructibleTiles.TileDestroyed -= PickupSpawn;
+        TilemapController.TileDestroyed -= PickupSpawn;
     }
 
     void PickupSpawn(Vector3 spawnPos)
