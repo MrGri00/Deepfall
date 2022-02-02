@@ -194,8 +194,8 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Concept Artist: Marc Garcia\r\r\n\r\nLead Animator: Marc Garcia\r\r\n\r\nLead
-    Environmental Artist: Marc Garcia\r\r\n\r\nQ&A Lead: Marc Garcia\r\r\n\r\nMusic:
-    Marc Garcia\r"
+    Environmental Artist: Marc Garcia\r\r\n\r\nQ&A Lead: Marc Garcia\r\r\n\r\nMusic
+    Director: Marc Garcia\r"
 --- !u!222 &562544738
 CanvasRenderer:
   m_ObjectHideFlags: 0
