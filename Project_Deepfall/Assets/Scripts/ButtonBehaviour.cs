@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class ButtonBehaviour : MonoBehaviour
 {
+    [Header("Canvas Panels")]
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private Canvas settingsCanvas;
     [SerializeField] private RectTransform gameOverPanel;
+
+    [Header("Submit Score Stuff")]
+    [SerializeField] private ScoreManager playerScoreManager;
+    [SerializeField] private InputField usernameInputField;
+    [SerializeField] private Text warningText;
+
 
     InputSystemKeyboard inputSystem = null;
     HealthManager playerHealthManager = null;
@@ -20,6 +27,9 @@ public class ButtonBehaviour : MonoBehaviour
             inputSystem = FindObjectOfType<InputSystemKeyboard>();
             playerHealthManager = inputSystem.gameObject.GetComponent<HealthManager>();
         }
+
+        if (usernameInputField != null)
+            usernameInputField.characterLimit = 20;
     }
 
     private void OnEnable()
@@ -110,6 +120,21 @@ public class ButtonBehaviour : MonoBehaviour
         #endif
 
         Application.Quit();
+    }
+
+    public void SubmitScore()
+    {
+        if (usernameInputField.text == "")
+        {
+            warningText.gameObject.SetActive(true);
+        }
+        else
+        {
+            ScoreDatabase.CreateDB();
+            ScoreDatabase.DBAddScore(usernameInputField.text, playerScoreManager.score);
+
+            EventSystem.current.currentSelectedGameObject.gameObject.GetComponent<Button>().interactable = false;
+        }
     }
 
     void DeathMenu()

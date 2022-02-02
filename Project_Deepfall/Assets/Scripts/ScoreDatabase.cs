@@ -57,7 +57,7 @@ public static class ScoreDatabase
 
                     while (reader.Read())
                     {
-                        highscore += "Name: " + reader["nickname"] + " Score: " + reader["score"] + "\n";
+                        highscore += reader["nickname"] + "\t" + reader["score"] + "\n";
 
                         iteration++;
 
