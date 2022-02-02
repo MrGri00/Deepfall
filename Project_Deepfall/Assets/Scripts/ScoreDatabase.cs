@@ -39,26 +39,38 @@ public static class ScoreDatabase
         }
     }
 
-    public static void DBDisplayTopScores()
+    public static string DBGetTopScores(int numOfScores)
     {
+        string highscore = "";
+
         using (SqliteConnection connection = new SqliteConnection(dbName))
         {
             connection.Open();
 
             using (SqliteCommand command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT * FROM scores;";
+                command.CommandText = "SELECT * FROM scores ORDER BY score DESC;";
 
                 using (SqliteDataReader reader = command.ExecuteReader())
                 {
-                    for (int i = 0; i < 5; i++)
+                    int iteration = 0;
+
+                    while (reader.Read())
                     {
-                        Debug.Log("Name: " + reader["nickname"] + "\tDamage: " + reader["score"]);
+                        highscore += "Name: " + reader["nickname"] + " Score: " + reader["score"] + "\n";
+
+                        iteration++;
+
+                        if (iteration >= numOfScores) { break; }
                     }
+
+                    reader.Close();
                 }
             }
 
             connection.Close();
+
+            return highscore;
         }
     }
 }
