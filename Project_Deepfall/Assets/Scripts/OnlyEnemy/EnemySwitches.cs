@@ -29,7 +29,7 @@ public class EnemySwitches : MonoBehaviour
     public bool PlayerInRange()
     {
         playerOffset = player.transform.position - transform.position;
-        playerOffset = new Vector3(playerOffset.x, playerOffset.y, 0);
+        playerOffset.z = 0;
 
         distance = playerOffset.magnitude;
 

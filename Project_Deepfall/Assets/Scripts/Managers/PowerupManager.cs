@@ -13,6 +13,8 @@ public class PowerupManager : MonoBehaviour
     private float chance = 0f;
     private int type = 0;
 
+    private Vector3 powerupFinalPosition;
+
     private void OnEnable()
     {
         MapManager.MapSpawned += PowerupSpawn;
@@ -53,7 +55,12 @@ public class PowerupManager : MonoBehaviour
             }
 
             powerup.GetComponent<HealthManager>().ResetHealth();
-            powerup.transform.position = new Vector3(powerupSpawnCoordinateX, powerupSpawnCoordinateY, 0);
+
+            powerupFinalPosition.x = powerupSpawnCoordinateX;
+            powerupFinalPosition.y = powerupSpawnCoordinateY;
+            powerupFinalPosition.z = 0;
+
+            powerup.transform.position = powerupFinalPosition;
 
             powerup.SetActive(true);
         }

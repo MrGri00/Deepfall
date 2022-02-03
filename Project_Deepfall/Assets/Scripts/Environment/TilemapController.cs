@@ -21,6 +21,10 @@ public class TilemapController : CollisionSystem
         public TileBase tileType;
     }
 
+    private Vector3 positionExchange;
+
+    private SavedTile sT = new SavedTile();
+
     private void Awake()
     {
         tilemap = GetComponent<Tilemap>();
@@ -46,7 +50,11 @@ public class TilemapController : CollisionSystem
 
                     Vector3 eventPos = tilemap.layoutGrid.CellToWorld(tileToDestroy);
 
-                    TileDestroyed(new Vector3(eventPos.x, transform.position.y, eventPos.z));
+                    positionExchange.x = eventPos.x;
+                    positionExchange.y = transform.position.y;
+                    positionExchange.z = eventPos.z;
+
+                    TileDestroyed(positionExchange);
                 }
 
                 other.gameObject.GetComponent<HealthManager>()?.ReduceHealth(points);
@@ -64,8 +72,6 @@ public class TilemapController : CollisionSystem
 
     private void SaveMap()
     {
-        SavedTile sT = new SavedTile();
-
         foreach (Vector3Int pos in tilemap.cellBounds.allPositionsWithin)
         {
             if (tilemap.HasTile(pos))

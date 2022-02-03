@@ -10,6 +10,7 @@ public class EnemyManager : MonoBehaviour
 
     private int enemySpawnCoordinateY = -3;
     private float enemySpawnCoordinateX = 0;
+    private Vector3 enemyFinalPos;
 
     private bool enemyType = false;
 
@@ -47,7 +48,12 @@ public class EnemyManager : MonoBehaviour
             }
 
             enemy.GetComponent<HealthManager>().ResetHealth();
-            enemy.transform.position = new Vector3(enemySpawnCoordinateX, enemySpawnCoordinateY, 0);
+
+            enemyFinalPos.x = enemySpawnCoordinateX;
+            enemyFinalPos.y = enemySpawnCoordinateY;
+            enemyFinalPos.z = 0;
+
+            enemy.transform.position = enemyFinalPos;
 
             enemy.SetActive(true);
         }

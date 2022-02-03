@@ -13,6 +13,12 @@ public class Shotgun : WeaponSystem
 
     public override event Action<int, int> UpdateAmmo = delegate { };
 
+    private Quaternion rotation;
+
+    private float rand;
+
+    private Vector2 velocityExchange;
+
     public override void Shoot()
     {
         GameObject[] projectile = new GameObject[slugsPerShot];
@@ -28,9 +34,9 @@ public class Shotgun : WeaponSystem
                 projectile[i].GetComponent<HealthManager>().ResetHealth();
                 projectile[i].transform.position = shotPoint.position;
 
-                float rand = UnityEngine.Random.Range(-shotgunFan, shotgunFan);
+                rand = UnityEngine.Random.Range(-shotgunFan, shotgunFan);
 
-                Quaternion rotation = Quaternion.Euler(
+                rotation = Quaternion.Euler(
                     shotPoint.eulerAngles.x,
                     shotPoint.eulerAngles.y,
                     shotPoint.eulerAngles.z + rand);
@@ -44,7 +50,10 @@ public class Shotgun : WeaponSystem
 
         if (currentAmmo > 0 && canShoot)
         {
-            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, 0);
+            velocityExchange.x = _rigidBody.velocity.x;
+            velocityExchange.y = 0;
+            _rigidBody.velocity = velocityExchange;
+
             _rigidBody.AddForce(transform.up * weaponData.recoil);
 
             currentAmmo--;

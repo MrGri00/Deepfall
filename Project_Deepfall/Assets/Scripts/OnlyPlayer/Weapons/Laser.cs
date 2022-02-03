@@ -6,6 +6,8 @@ using UnityEngine;
 public class Laser : WeaponSystem
 {
     public override event Action<int, int> UpdateAmmo = delegate { };
+    
+    Vector2 velocityExchange;
 
     public override void Shoot()
     {
@@ -22,7 +24,11 @@ public class Laser : WeaponSystem
             projectile.transform.rotation = shotPoint.rotation;
             projectile.SetActive(true);
             projectile.GetComponent<Rigidbody2D>().AddForce(transform.up * weaponData.fireForce);
-            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, 0);
+
+            velocityExchange.x = _rigidBody.velocity.x;
+            velocityExchange.y = 0;
+            _rigidBody.velocity = velocityExchange;
+
             _rigidBody.AddForce(transform.up * weaponData.recoil);
             StartCoroutine(CadenceCountdown());
         }

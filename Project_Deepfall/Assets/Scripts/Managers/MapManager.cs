@@ -14,10 +14,10 @@ public class MapManager : MonoBehaviour
 
     private int mapSpawnCoordinateY = -6;
 
+    private int rand = 0;
+
     private void Start()
     {
-        int rand = 0;
-
         for (int i = 0; i < 3; i++)
         {
             rand = UnityEngine.Random.Range(1, 7);
@@ -29,8 +29,6 @@ public class MapManager : MonoBehaviour
 
     private void Update()
     {
-        int rand = 0;
-
         if (player.transform.position.y - renderDistance <= mapSpawnCoordinateY)
         {
             rand = UnityEngine.Random.Range(1, 7);

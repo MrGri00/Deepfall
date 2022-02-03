@@ -25,6 +25,7 @@ public static class ScoreDatabase
 
     public static void DBAddScore(string playerName, int playerScore)
     {
+
         using (SqliteConnection connection = new SqliteConnection(dbName))
         {
             connection.Open();
@@ -51,10 +52,10 @@ public static class ScoreDatabase
             {
                 command.CommandText = "SELECT * FROM scores ORDER BY score DESC;";
 
+                int iteration = 0;
+
                 using (SqliteDataReader reader = command.ExecuteReader())
                 {
-                    int iteration = 0;
-
                     while (reader.Read())
                     {
                         highscore += reader["nickname"] + "\t" + reader["score"] + "\n";
@@ -69,8 +70,8 @@ public static class ScoreDatabase
             }
 
             connection.Close();
-
-            return highscore;
         }
+
+        return highscore;
     }
 }

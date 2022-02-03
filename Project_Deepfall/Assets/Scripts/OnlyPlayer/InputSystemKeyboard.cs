@@ -18,7 +18,8 @@ public class InputSystemKeyboard : MonoBehaviour
     {
         if (!isPaused)
         {
-            movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            movement.x = Input.GetAxis("Horizontal");
+            movement.y = Input.GetAxis("Vertical");
 
             if (Input.GetKeyDown(KeyCode.Escape))
                 PauseGame();

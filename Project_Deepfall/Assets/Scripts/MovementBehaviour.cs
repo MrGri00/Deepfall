@@ -14,6 +14,9 @@ public class MovementBehaviour : MonoBehaviour
 
     private float lastDir = 1;
 
+    private Vector2 velocityExchange;
+    private Vector3 scaleExchange;
+
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
@@ -24,18 +27,26 @@ public class MovementBehaviour : MonoBehaviour
         if (WallInFront())
             lastDir *= -1;
 
-        _rigidBody.velocity = new Vector2(lastDir * speed, _rigidBody.velocity.y);
+        velocityExchange.x = lastDir * speed;
+        velocityExchange.y = _rigidBody.velocity.y;
+        _rigidBody.velocity = velocityExchange;
     }
 
     public void Move(Vector2 dir)
     {
         if (dir.x * lastDir < 0)
         {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            scaleExchange.x = -transform.localScale.x;
+            scaleExchange.y = transform.localScale.y;
+            scaleExchange.z = transform.localScale.z;
+
+            transform.localScale = scaleExchange;
             lastDir = dir.x;
         }
 
-        _rigidBody.velocity = new Vector2(dir.x * speed, _rigidBody.velocity.y);
+        velocityExchange.x = dir.x * speed;
+        velocityExchange.y = _rigidBody.velocity.y;
+        _rigidBody.velocity = velocityExchange;
     }
 
     public void Jump()
@@ -56,7 +67,9 @@ public class MovementBehaviour : MonoBehaviour
 
     public void StopMoving()
     {
-        _rigidBody.velocity = new Vector2(0, 0);
+        velocityExchange.x = 0;
+        velocityExchange.y = 0;
+        _rigidBody.velocity = velocityExchange;
     }
 
     private bool WallInFront()
