@@ -11,7 +11,6 @@ public class PickupGem : CollisionSystem
 
         if (other.gameObject.CompareTag("Player"))
         {
-            GetComponent<AudioSource>().Play();
             GetComponent<HealthManager>().ReduceHealth(GetComponent<HealthManager>().GetMaxHealth());
         }
     }
