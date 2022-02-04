@@ -133,6 +133,7 @@ public class ButtonBehaviour : MonoBehaviour
             ScoreDatabase.CreateDB();
             ScoreDatabase.DBAddScore(usernameInputField.text, playerScoreManager.score);
 
+            usernameInputField.interactable = false;
             EventSystem.current.currentSelectedGameObject.gameObject.GetComponent<Button>().interactable = false;
         }
     }
