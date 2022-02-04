@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,6 +58,7 @@ public class ButtonBehaviour : MonoBehaviour
             inputSystem.isPaused = true;
             Time.timeScale = 0f;
         }
+        GC.Collect();
         pauseCanvas.gameObject.SetActive(true);
     }
 
@@ -115,6 +117,8 @@ public class ButtonBehaviour : MonoBehaviour
 
     public void CloseGame()
     {
+        GC.Collect();
+
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
