@@ -7,6 +7,9 @@ public static class ScoreDatabase
 {
     private static string dbName = "URI=file:ScoreDatabase.db";
 
+    private static string highscore;
+    private static int iteration;
+
     public static void CreateDB()
     {
         using (SqliteConnection connection = new SqliteConnection(dbName))
@@ -42,7 +45,8 @@ public static class ScoreDatabase
 
     public static string DBGetTopScores(int numOfScores)
     {
-        string highscore = "";
+        highscore = "";
+        iteration = 0;
 
         using (SqliteConnection connection = new SqliteConnection(dbName))
         {
@@ -51,8 +55,6 @@ public static class ScoreDatabase
             using (SqliteCommand command = connection.CreateCommand())
             {
                 command.CommandText = "SELECT * FROM scores ORDER BY score DESC;";
-
-                int iteration = 0;
 
                 using (SqliteDataReader reader = command.ExecuteReader())
                 {
