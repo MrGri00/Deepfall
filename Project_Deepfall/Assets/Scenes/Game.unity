@@ -1695,8 +1695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13749682ea4c8794a8f8482a2bea88ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromCameraX: 15
-  distanceFromCameraY: 15
+  distanceFromCameraX: 10
+  distanceFromCameraY: 10
 --- !u!1 &216881824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,7 +2068,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 998623436}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &234794007
 MonoBehaviour:
@@ -2615,7 +2615,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 998623436}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &365269171
 MonoBehaviour:
@@ -8124,7 +8124,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 998623436}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &616738696
 MonoBehaviour:
@@ -8140,7 +8140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 292853219}
   grid: {fileID: 1705649112}
-  renderDistance: 18
+  renderDistance: 12
 --- !u!1 &648665790
 GameObject:
   m_ObjectHideFlags: 0
@@ -8436,7 +8436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 998623436}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &840287168
 GameObject:
@@ -8679,7 +8679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 998623436}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &852002967
 MonoBehaviour:
@@ -8696,16 +8696,16 @@ MonoBehaviour:
   pooledLists:
   - listName: Slime
     prefabToPool: {fileID: 7635746299464882420, guid: 10da108ecac22d848babe07d72fce5fa, type: 3}
-    amount: 30
+    amount: 10
   - listName: Bee
     prefabToPool: {fileID: 4824772311029594982, guid: 91a362f586a8a224693b81fd395e7659, type: 3}
-    amount: 30
+    amount: 10
   - listName: Bullet
     prefabToPool: {fileID: 4896863960806283738, guid: 98c110deafea07d48840a85e97d363bc, type: 3}
-    amount: 24
+    amount: 16
   - listName: Slug
     prefabToPool: {fileID: 6603921659574862780, guid: 73003c6e1b6ab8c41aec42c7fa1ce928, type: 3}
-    amount: 60
+    amount: 50
   - listName: Ray
     prefabToPool: {fileID: 8995059142480517204, guid: 0b4483fb3cc82e944b8c615bc92d522e, type: 3}
     amount: 9
@@ -8723,69 +8723,54 @@ MonoBehaviour:
     amount: 10
   - listName: BlueGemPickup
     prefabToPool: {fileID: 3989404015602776124, guid: ab64418570b9c374280efc2a32d43136, type: 3}
-    amount: 50
+    amount: 40
   - listName: GreenGemPickup
     prefabToPool: {fileID: 2458743049880482784, guid: 0f2bb8a9b54d03d4f82b7c362c7e8dba, type: 3}
-    amount: 50
+    amount: 40
   - listName: YellowGemPickup
     prefabToPool: {fileID: 4383515783346630222, guid: 22b6c2596065edf4485e26b83930961a, type: 3}
-    amount: 50
+    amount: 40
   - listName: HealthPickup
     prefabToPool: {fileID: 1501906410603310336, guid: 29f4128ed8476b24fa3d2a37dcb9ab7d, type: 3}
-    amount: 50
+    amount: 40
   - listName: Solid1
     prefabToPool: {fileID: 4914302947897887195, guid: 82e67f6e65008134ea078908ffa29a87, type: 3}
-    amount: 20
+    amount: 16
   - listName: Solid2
     prefabToPool: {fileID: 4593430663174487636, guid: c49e2b5745867a94ba046ca78b3f334d, type: 3}
-    amount: 20
+    amount: 16
   - listName: Solid3
     prefabToPool: {fileID: 5414292137029023900, guid: e6fa0e6568a9e7b47b07167d724ff1ed, type: 3}
-    amount: 20
+    amount: 16
   - listName: Solid4
     prefabToPool: {fileID: 8670055339751644427, guid: c3e6a46d99db94b428004c369e6a28cd, type: 3}
-    amount: 20
+    amount: 16
   - listName: Solid5
     prefabToPool: {fileID: 8728368642529347828, guid: 7c8aacc4175db214081f5e9904f3f561, type: 3}
-    amount: 20
+    amount: 16
   - listName: Solid6
     prefabToPool: {fileID: 8303960080224822000, guid: 3053cd6d926206d449e76f993b185270, type: 3}
-    amount: 20
+    amount: 16
   - listName: Destructible1
     prefabToPool: {fileID: 1995255651337158902, guid: 2f5f627e950ab8749b303e788c60ed2a, type: 3}
-    amount: 20
+    amount: 16
   - listName: Destructible2
     prefabToPool: {fileID: 3319886734756804607, guid: 6b0b97f6d17c7814f8ca86b333b54bb4, type: 3}
-    amount: 20
+    amount: 16
   - listName: Destructible3
     prefabToPool: {fileID: 406847835954194178, guid: 03ba5f6796c51ea4ba0d7ee2a081270d, type: 3}
-    amount: 20
+    amount: 16
   - listName: Destructible4
     prefabToPool: {fileID: 7921144989471846540, guid: cd27b53d14b9e3a46aa0992bde48ee68, type: 3}
-    amount: 20
+    amount: 16
   - listName: Destructible5
     prefabToPool: {fileID: 7296952605926885799, guid: 4f33284ac0292014c856c3f41a451286, type: 3}
-    amount: 20
+    amount: 16
   - listName: Destructible6
     prefabToPool: {fileID: 1753030483660948764, guid: 37e5e51f4e5a86747b0495f7c5be7512, type: 3}
-    amount: 20
-  - listName: Background1
+    amount: 16
+  - listName: Background
     prefabToPool: {fileID: 4155103910107190152, guid: c28884a04e5a8814a8c82c64072c4fe6, type: 3}
-    amount: 20
-  - listName: Background2
-    prefabToPool: {fileID: 2106978201214678768, guid: 5fb34575e425cf440be70ca72de9fb6e, type: 3}
-    amount: 20
-  - listName: Background3
-    prefabToPool: {fileID: 5843491063883159378, guid: 37e0f6a42e0d1f94981b9a0c7405cca7, type: 3}
-    amount: 20
-  - listName: Background4
-    prefabToPool: {fileID: 5623453214354309525, guid: 329627586eb583143a7480d370c4bc54, type: 3}
-    amount: 20
-  - listName: Background5
-    prefabToPool: {fileID: 8725946102912849053, guid: 06fcf626b12df1c4489290d591e5dc7c, type: 3}
-    amount: 20
-  - listName: Background6
-    prefabToPool: {fileID: 125460021013076968, guid: f627a2c7140c84e45979086fe074a713, type: 3}
     amount: 20
 --- !u!1 &871283225
 GameObject:
@@ -9401,54 +9386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13749682ea4c8794a8f8482a2bea88ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromCameraX: 15
-  distanceFromCameraY: 15
---- !u!1 &919823091
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 919823092}
-  - component: {fileID: 919823093}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &919823092
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919823091}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 998623436}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &919823093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919823091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a9dc37a74c42a48a854f296943d49e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mapManager: {fileID: 616738696}
-  _enemyManager: {fileID: 1885748026}
-  _powerupManager: {fileID: 365269171}
+  distanceFromCameraX: 10
+  distanceFromCameraY: 10
 --- !u!1 &948502960
 GameObject:
   m_ObjectHideFlags: 0
@@ -9808,7 +9747,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 919823092}
   - {fileID: 616738695}
   - {fileID: 1885748025}
   - {fileID: 365269170}
@@ -10217,8 +10155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13749682ea4c8794a8f8482a2bea88ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromCameraX: 15
-  distanceFromCameraY: 15
+  distanceFromCameraX: 10
+  distanceFromCameraY: 10
 --- !u!1 &1051011979
 GameObject:
   m_ObjectHideFlags: 0
@@ -17726,7 +17664,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 998623436}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1870652051
 MonoBehaviour:
@@ -17807,7 +17745,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 998623436}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1885748026
 MonoBehaviour:
